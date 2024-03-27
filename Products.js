@@ -1,38 +1,40 @@
-import product1 from "./public/images/product_0_small.jpg"
-import product2 from "./public/images/product_1_small.jpg"
-import product3 from "./public/images/product_2_small.jpg"
-import product4 from "./public/images/product_3_small.jpg"
-import product5 from "./public/images/product_4_small.jpg"
+
 
 export const PRODUCTS =[
     {
         id:1,
-        productName: "book1",
-        productImage: product1,
-        price: 70,
+        productName: "The New Jack Reacher- Lee Child",
+        img: "../images/product_0_small.jpg",
+        price: 20,
+        options: "4 prodotti usati",
+        quantity:1 
     },
     {
         id:2,
-        productName: "book1",
-        productImage: product2,
-        price: 70,
+        productName: "Guide to the Night Sky 2023 by Collin's",
+        img: "../images/product_8_small.jpg",
+        price: 40,
+        options: "L'ultimo 2 prodotti!" 
     },
     {
         id:3,
-        productName: "book1",
-        productImage: product3,
-        price: 70,
+        productName: "Simple One-Pan Wonders -Jamie Oliver",
+        img: "../images/product_2_small.jpg",
+        price: 55,
+        options: "12 prodotti usati" 
     },
     {
         id:4,
-        productName: "book1",
-        productImage: product4,
-        price: 70,
+        productName: "The Bullet that Missed - Richard Osman",
+        img: "../images/product_3_small.jpg",
+        price: 30,
+        options: "Offerte imbattibili" 
     },
     {
         id:5,
-        productName: "book1",
-        productImage: product5,
-        price: 70,
+        productName: "Interesting facts for Curious Minds",
+        img: "../images/product_4_small.jpg",
+        price: 34,
+        options: "1 prodotti usati" 
     },
 ]

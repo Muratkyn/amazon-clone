@@ -53,9 +53,9 @@ const page = () => {
                     </div>
                 </div>
         </div>
-         <div>
+         
                 <ProductPage />
-         </div>
+         
       </div>
     </div>
   )

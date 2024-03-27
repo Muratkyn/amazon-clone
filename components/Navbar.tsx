@@ -1,11 +1,17 @@
+"use client"
 import React from 'react'
-import { ShoppingCartIcon } from '@heroicons/react/16/solid'
+import { ShoppingCartIcon } from "@heroicons/react/24/outline"
 import Search from './Search'
 import { MapPinIcon } from '@heroicons/react/16/solid'
 import { Bars3Icon } from '@heroicons/react/16/solid'
 import Link from 'next/link'
+import { useSelector } from 'react-redux'
+import { Rootstate } from '@/redux/store'
 
 const Navbar = () => {
+
+    const cart = useSelector((state:Rootstate) => state.cart.productsNumber )
+
   return (
     <header className='min-w-[1000px]'>
         <div className='flex bg-amazonColors-default text-white h-[60px]'>
@@ -48,7 +54,12 @@ const Navbar = () => {
                 </div>
                 <div >
                     <Link href={"/checkout"} className='flex pr-3 pl-3'>
-                    <ShoppingCartIcon className='h-[40px]' />
+                    <ShoppingCartIcon className='h-[50px] relative' />
+                    <div className='relative'>
+                        <div className='absolute font-bold right-[16px] top-[8px] text-orange-500'>
+                            {cart}
+                        </div>
+                    </div>
                         <div className='mt-5 text-xs xl:text-sm font-bold'>
                             Carrello
                         </div>
