@@ -18,13 +18,13 @@ const Navbar = () => {
             { /* Left */}
             <div className='flex items-center p- m-4'>
                 <Link href={"/"}>
-                    <img className='h-[35px] w-[110px] m-2' src='../images/amazon.png'></img>
+                    <img className='h-[35px] w-[110px] m-2 ' src='../images/amazon.png'></img>
                 </Link>
-                <div className='pr-4 pl-4'>
-                    <div className='text-xs xl:text-sm text-gray-300'>
+                <div className='pr-4 pl-4 reltive'>
+                    <div className='text-xs xl:text-sm text-gray-300 '>
                         In consegna a
                     </div>
-                    <div className='text-sm xl:text-base font-bold flex items-center'>
+                    <div className='text-sm xl:text-base font-bold flex items-center '>
                         <MapPinIcon className='h-[15px]'/>
                         Aggiorna posizione
                     </div>
@@ -36,7 +36,7 @@ const Navbar = () => {
             </div>
             { /* Right */}    
             <div className='flex items-center m-4'>
-                <div className='pr-4 pl-4 ml-10'>
+                <div className='pr-4 pl-1 ml-10'>
                     <div className='text-xs xl:text-sm text-gray-300'>
                         Ciao, accedi
                     </div>
@@ -68,9 +68,10 @@ const Navbar = () => {
                 </div>
             </div>
         </div>
-        <div className='flex items-center bg-amazonColors-lightBlue text-white space-x-5 text-xs xl:text-sm p-2 pl-12 gap-1 '>
-           
-           <Link className='flex items-center' href="/product"><Bars3Icon className='h-[25px] mr-1'/>Tutte</Link>
+        <div className='flex items-center justify-center bg-amazonColors-lightBlue text-white space-x-5 text-xs xl:text-sm p-2 pl-1 gap-1 cursor-pointer '>
+            <Bars3Icon className='h-[28px]'/>
+           <Link className="justify-start flex" href="/product">
+            Tutte</Link>
             <div>Bestseller</div>
             <div>Novita</div>
             <div>Amazon Basics</div>
@@ -88,7 +89,9 @@ const Navbar = () => {
             <div>Audible</div>
             <div className='flex items-center'>
                 <img className='w-[30px] h-[30px] ml-4' src="./images/play.svg" alt="" />
-                <p className='pl-2 text-cyan-500 text-md font-bold'>AMAZON PRIME | <span className='text-white text-sm'>Iscriviti, gratis per 30 giorni</span></p>
+                <Link href={"https://www.primevideo.com/-/it/offers/nonprimehomepage/ref=atv_hom_offers_c_9zZ8D2_hom"}>
+                <p className='pl-2 text-cyan-500 text-md font-bold'>AMAZON PRIME <span className='text-white text-sm'>| Iscriviti, gratis per 30 giorni</span></p>
+                </Link>
             </div>
             
         </div>

@@ -32,8 +32,17 @@ export const cartSlice = createSlice ({
             
         },
         removeFromCart : (state,action) => {
-
-
+          const productToRemove = state.products.find(
+            (product) => product.id === action.payload
+          );
+          
+          state.productsNumber = state.productsNumber - productToRemove.quantity;
+          
+          const index = state.products.findIndex(
+            (product) => product.id === action.payload
+          );
+          state.products.splice(index, 1);
+          console.log(action.payload)
         }
     }
 })
