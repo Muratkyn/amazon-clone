@@ -8,7 +8,7 @@ import "swiper/css";
 
 const CarouselProducts = () => {
   return (
-    <div className='bg-white m-3'>
+    <div className='bg-white m-3 p-5'>
         <div className='text-2xl font-semibold p-3'>Best sellers
         <Swiper
             slidesPerView={6}
@@ -19,7 +19,7 @@ const CarouselProducts = () => {
         >
             {
                 Array.from ( { length: 9 }, (_, i) => 
-                <SwiperSlide key={i}>
+                <SwiperSlide className='m-1' key={i}>
                     <Link href={`/product`}>
                     
                     <img src={`../images/product_${i}_small.jpg`} alt="" />

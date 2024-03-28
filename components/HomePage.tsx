@@ -34,7 +34,7 @@ const HomePage = () => {
                 link={"Visualizza tutte le offerte"}
                 />
                 <Cards 
-                  title={"Film fantastici su Prime"}
+                  title={"Offerte lampo"}
                   img={"/images/amazon-card-image-5.jpg"}
                   link={"Visualizza tutte le offerte"}
                 />
@@ -49,7 +49,7 @@ const HomePage = () => {
                   link={"Visualizza tutte le offerte"}
                 />
                 <Cards 
-                  title={"Incluso con Prime"}
+                  title={"Cerchi un regalo?"}
                   img={"/images/amazon-card-image-8.jpg"}
                   link={"Visualizza tutte le offerte"}
                 />

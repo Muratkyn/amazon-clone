@@ -37,7 +37,7 @@ const ProductPage = () => {
             </svg>
             <p className='ml-2'>Amazon's choice</p>
           </div>
-          <span className='m-4'>{product.price}€</span>
+          <span className='m-4 font-bold'>{product.price}€</span>
           <span className='text-xs text-blue-400 mr-4'>({product.options})</span>
           <div className='flex justify-center items-center mt-5'>
             <button onClick={() => dispatch(addToCart((product)))} className='bg-yellow-500 p-2 rounded-xl w-[70%] hover:bg-yellow-600 hover:border'>Aggiungi al carrello</button>

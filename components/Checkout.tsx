@@ -1,8 +1,9 @@
 import React, { useState } from 'react'
-import { useSelector } from 'react-redux'
+import { useDispatch, useSelector } from 'react-redux'
 import { Rootstate } from '@/redux/store'
 import { ProductProps } from '@/type'
 import Link from 'next/link'
+import { removeFromCart } from '@/redux/CartSlice'
 
 const Checkout = () => {
     const items = useSelector((state:Rootstate) => state.cart.products)
@@ -10,6 +11,7 @@ const Checkout = () => {
     const subtotal = useSelector((state:Rootstate) => state.cart.products.reduce((subtotal, product) => 
     subtotal + (product.price * product.quantity), 0
     ))
+    const dispatch = useDispatch()
    
   return (
     <div>
@@ -25,7 +27,10 @@ const Checkout = () => {
               <div className='grid grid-cols-8 gap-10 mb-12'>
                 {/* Products */}
                   <div className='col-span-6 bg-white'>
-                      <div className='text-2xl xl:text-3xl m-4 pl-8'>Carrello</div>
+                      <div className='text-2xl xl:text-3xl mt-4 pl-10'>Carrello</div>
+                      <div className='flex flex-col items-end mr-8'>
+                        <p>prezzo</p>
+                      </div>
                       {
                         items.map((item) => {
                           return (
@@ -33,40 +38,51 @@ const Checkout = () => {
                                 <div className='grid grid-cols-12 divide-y divide-gray-400'>
                                     <div className='col-span-10 grid grid-cols-8 divide-y divide-gray-400'>
                                         <div className='col-span-2'> 
-                                            <img className='p-10' src={item.img} alt="small" />
+                                            <img className='p-16' src={item.img} alt="small" />
                                         </div>
-                                        <div className='col-span-6 p-10'> 
-                                            <div className='font-medium text-black mt-2'>
+                                        <div className='col-span-6 p-10 '> 
+                                            <div className='font-medium mt-2 text-xs xl:text-xl text-blue-500 cursor-pointer'>
                                                 {item.productName}
                                             </div>
-                                            <div>
-                                              <p>dfjdh</p>
+                                            <div className='max-w-[150px] mb-2 mt-2'>
+                                              <p className='text-sm text-orange-400 mr-3 font-semibold'>({item.options})</p>
+                                              <div className='flex mt-2'>
+                                              <p className='bg-yellow-500 max-w[20px] rounded p-1 items-center font-bold text-sm'>Amazon's choice</p>
+                                              </div>
                                             </div>
-                                            <div className='grid grid-cols-3 w-20 flex'>
-                                                <div className='text-xl xl:text-2xl bg-gray-400 rounded pl-2'>-</div>
-                                                <div className='text-xl xl:text-xl bg-gray-200 pl-2 '>{item.quantity}</div>
-                                                <div className='text-xl xl:text-2xl bg-gray-400 rounded pl-2'>+</div> 
-                                                <button>Delete</button>                                              
+                                            <div className='grid grid-cols-3 w-20'>
+                                                <div className='text-sm xl:text-xl bg-white border border-solid border-grey shadow-lg rounded pl-1.5 hover:bg-slate-100 cursor-pointer'>-</div>
+                                                <div className='text-sm xl:text-xl bg-white border border-solid border-grey shadow-lg pl-1.5 hover:bg-slate-100 rounded cursor-pointer'>{item.quantity}</div>
+                                                <div className='text-sm xl:text-xl bg-white border border-solid border-grey shadow-lg rounded pl-1.5 hover:bg-slate-100 cursor-pointer'>+</div> 
+                                                                                            
+                                            </div>
+                                            <div className='mt-4 gap-2 flex'>
+                                            <button className='text-xs border border-solid border-grey rounded-lg p-1.5 shadow-lg hover:bg-slate-100' onClick={() => dispatch(removeFromCart(item.id))}>Rimuovi</button>  
+                                            <button className='text-xs border border-solid border-grey rounded-lg p-1.5 shadow-lg hover:bg-slate-100'>Salva per Dopo</button>                                      
+                                            <button className='text-xs border border-solid border-grey rounded-lg p-1.5 shadow-lg hover:bg-slate-100'>Condividi</button>                                      
+                                            <Link href={"/product"}>
+                                              <button className='text-xs border border-solid border-grey rounded-lg p-1.5 shadow-lg hover:bg-slate-100'>Visualiiza gli altri articoli simili</button>                                      
+                                            </Link>
                                             </div>
                                         </div>
                                     </div>
-                                    <div className='col-span-2 p-10'> 
-                                        <div className='text-lg xl:text-xl mt-2 mr-4 font-semibold'>{item.price}€</div>
+                                    <div className='col-span-2 p-10 flex flex-row justify-end'> 
+                                        <div className='text-lg xl:text-xl mt-2 font-bold '>{item.price}€</div>
                                     </div>
                                 </div>
                             </div>
                           )
                         } )
                       }
-                      <div className='text-lg xl:text-xl text-right mb-2 mr-4 '>Totale provissorio ({itemsNumber}): <span 
+                      <div className='text-lg xl:text-xl text-right mb-2 mr-10 '>Totale provissorio ({itemsNumber}): <span 
                       className='font-semibold'>{subtotal}€</span></div>
                   </div>
 
               <div className='col-span bg-white rounded h-[280px] w-[300px] p-10'>
-                    <div className='text-xs text-green-800 mb-2'>Benvenuto in Amazon! <span 
-                    className='font-bold'>Spedizione GRATUITA</span>sul tuo primo ordine. Selezionare questa opzione al momento della conferma dell’ordine. Dettagli
-                     Delivery Details</div>
-                    <div className='text-base xl:text-lg mb-4'>Totale provissorio({itemsNumber} articoli): <span 
+                    <div className='text-xs text-green-800 mb-2'>Benvenuto in Amazon!<span 
+                    className='font-bold'>Spedizione GRATUITA</span> sul tuo primo ordine. Selezionare questa opzione al momento della conferma dell’ordine. Dettagli
+                     </div>
+                    <div className='text-base xl:text-lg mb-4 '>Totale provissorio({itemsNumber} articoli): <span 
                       className='font-semibold'>{subtotal}€</span></div>
                       <Link href={"/payment"}>
                       <button className='bg-yellow-500 p-2 rounded-xl w-[100%]  hover:bg-yellow-600 hover:border'>Procedi all'ordine</button>
