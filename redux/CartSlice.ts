@@ -7,7 +7,7 @@ productsNumber: number,
 }
 const initialState : Product = {
     products: [],
-    productsNumber: 0
+    productsNumber: 0,
 }
 
 export const cartSlice = createSlice ({
@@ -29,9 +29,10 @@ export const cartSlice = createSlice ({
             
             console.log(action.payload)
             state.productsNumber += 1;
-            state.products.push({...action.payload});
+            
         },
         removeFromCart : (state,action) => {
+
 
         }
     }

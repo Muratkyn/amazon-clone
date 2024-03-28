@@ -39,17 +39,17 @@ const HomePage = () => {
                   link={"Visualizza tutte le offerte"}
                 />
                 <Cards 
-                  title={"Offerte in evidenza"}
+                  title={"Piattaforma per i gamers"}
                   img={"/images/amazon-card-image-6.jpg"}
                   link={"Visualizza tutte le offerte"}
                 />
                 <Cards 
-                  title={"Offerte in evidenza"}
+                  title={"Studente? Risparmia il 50% "}
                   img={"/images/amazon-card-image-7.jpg"}
                   link={"Visualizza tutte le offerte"}
                 />
                 <Cards 
-                  title={"Offerte in evidenza"}
+                  title={"Incluso con Prime"}
                   img={"/images/amazon-card-image-8.jpg"}
                   link={"Visualizza tutte le offerte"}
                 />

@@ -5,6 +5,6 @@ export interface ProductProps {
     productName: string,
     src: string,
     price: number,
-    options: string
-    
+    options: string,
+    quantity: string    
 }

@@ -1,8 +1,8 @@
 import React, { useState } from 'react'
 import { useSelector } from 'react-redux'
 import { Rootstate } from '@/redux/store'
-
-
+import { ProductProps } from '@/type'
+import Link from 'next/link'
 
 const Checkout = () => {
     const items = useSelector((state:Rootstate) => state.cart.products)
@@ -13,12 +13,19 @@ const Checkout = () => {
    
   return (
     <div>
-      <div className='h-screen bg-amazonColors-backgroundColor'>
-          <div className='min-w[1000px] max-w-[1500px] m-auto pt-8'>
-              <div className='grid grid-cols-8 gap-10'>
+      <div className='h-screen bg-amazonColors-backgroundColor overflow-scroll'>
+        <div className='min-w[700px] max-w-[1000px] h-[140px] m-auto pt-8 flex items-center justify-center'>
+          <div className='bg-white w-[90%] h-[130px] flex flex-row justify-center items-center gap-20'>
+            <Link href={"/product"}><button className='text-sm border border-solid border-grey rounded-lg p-1.5 shadow-lg hover:bg-slate-100'>Scopri di piu</button></Link>
+            <div><button className='text-sm'><span className='font-bold'>Metti da parte il budget per i tuoi futuri acquisti </span>Amazon Ricarica</button></div>
+            <div><img src='./images/amazon-cart-image.jpg'></img></div>
+          </div>
+        </div>
+          <div className='min-w[1000px] max-w-[1500px] h-auto m-auto pt-8'>
+              <div className='grid grid-cols-8 gap-10 mb-12'>
                 {/* Products */}
                   <div className='col-span-6 bg-white'>
-                      <div className='text-2xl xl:text-3xl m-4'>Carrello</div>
+                      <div className='text-2xl xl:text-3xl m-4 pl-8'>Carrello</div>
                       {
                         items.map((item) => {
                           return (
@@ -33,12 +40,13 @@ const Checkout = () => {
                                                 {item.productName}
                                             </div>
                                             <div>
-                                                <button>Delete</button>
+                                              <p>dfjdh</p>
                                             </div>
-                                            <div className='grid grid-cols-3 w-20'>
-                                                <div className='text-xl xl:text-2xl bg-gray-400 rounded'>-</div>
-                                                <div className='text-xl xl:text-xl bg-gray-200'>{item.quantity}</div>
-                                                <div className='text-xl xl:text-2xl bg-gray-400 rounded'>+</div>
+                                            <div className='grid grid-cols-3 w-20 flex'>
+                                                <div className='text-xl xl:text-2xl bg-gray-400 rounded pl-2'>-</div>
+                                                <div className='text-xl xl:text-xl bg-gray-200 pl-2 '>{item.quantity}</div>
+                                                <div className='text-xl xl:text-2xl bg-gray-400 rounded pl-2'>+</div> 
+                                                <button>Delete</button>                                              
                                             </div>
                                         </div>
                                     </div>
@@ -60,7 +68,9 @@ const Checkout = () => {
                      Delivery Details</div>
                     <div className='text-base xl:text-lg mb-4'>Totale provissorio({itemsNumber} articoli): <span 
                       className='font-semibold'>{subtotal}€</span></div>
-                      <button className='bg-yellow-500 p-2 rounded-xl w-[100%]'>Procedi all'ordine</button>
+                      <Link href={"/payment"}>
+                      <button className='bg-yellow-500 p-2 rounded-xl w-[100%]  hover:bg-yellow-600 hover:border'>Procedi all'ordine</button>
+                      </Link>
               </div>
               </div>
           </div>

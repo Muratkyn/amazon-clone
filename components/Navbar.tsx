@@ -68,10 +68,9 @@ const Navbar = () => {
                 </div>
             </div>
         </div>
-        <div className='flex bg-amazonColors-lightBlue text-white space-x-3 text-xs xl:text-sm p-2 pl-12 gap-1 '>
-           <Bars3Icon className='h-[20px]'/>
-           <Link href="/product">Tutte</Link>
-
+        <div className='flex items-center bg-amazonColors-lightBlue text-white space-x-5 text-xs xl:text-sm p-2 pl-12 gap-1 '>
+           
+           <Link className='flex items-center' href="/product"><Bars3Icon className='h-[25px] mr-1'/>Tutte</Link>
             <div>Bestseller</div>
             <div>Novita</div>
             <div>Amazon Basics</div>
@@ -87,7 +86,11 @@ const Navbar = () => {
             <div>Videogiochi</div>
             <div>Supermercato</div>
             <div>Audible</div>
-
+            <div className='flex items-center'>
+                <img className='w-[30px] h-[30px] ml-4' src="./images/play.svg" alt="" />
+                <p className='pl-2 text-cyan-500 text-md font-bold'>AMAZON PRIME | <span className='text-white text-sm'>Iscriviti, gratis per 30 giorni</span></p>
+            </div>
+            
         </div>
     </header>
   )

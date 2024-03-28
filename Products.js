@@ -14,27 +14,31 @@ export const PRODUCTS =[
         productName: "Guide to the Night Sky 2023 by Collin's",
         img: "../images/product_8_small.jpg",
         price: 40,
-        options: "L'ultimo 2 prodotti!" 
+        options: "L'ultimo 2 prodotti!",
+        quantity:1  
     },
     {
         id:3,
         productName: "Simple One-Pan Wonders -Jamie Oliver",
         img: "../images/product_2_small.jpg",
         price: 55,
-        options: "12 prodotti usati" 
+        options: "12 prodotti usati",
+        quantity:1 
     },
     {
         id:4,
         productName: "The Bullet that Missed - Richard Osman",
         img: "../images/product_3_small.jpg",
         price: 30,
-        options: "Offerte imbattibili" 
+        options: "Offerte imbattibili",
+        quantity:1  
     },
     {
         id:5,
         productName: "Interesting facts for Curious Minds",
         img: "../images/product_4_small.jpg",
         price: 34,
-        options: "1 prodotti usati" 
+        options: "1 prodotti usati",
+        quantity:1  
     },
 ]
