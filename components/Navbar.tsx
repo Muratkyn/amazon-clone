@@ -64,11 +64,10 @@ const Navbar = () => {
                             Carrello
                         </div>
                     </Link>
-                        
                 </div>
             </div>
         </div>
-        <div className='flex items-center justify-center bg-amazonColors-lightBlue text-white space-x-5 text-xs xl:text-sm p-2 pl-1 gap-1 cursor-pointer '>
+        <div className='flex items-center justify-center bg-amazonColors-lightBlue text-white space-x-5 text-xs xl:text-sm p-2 pl-1 gap-1 cursor-pointer md:text-xs lg:text-xs '>
             <Bars3Icon className='h-[28px]'/>
            <Link className="justify-start flex" href="/product">
             Tutte</Link>

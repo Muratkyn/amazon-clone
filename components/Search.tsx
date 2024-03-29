@@ -1,5 +1,6 @@
 import React from 'react'
 import { MagnifyingGlassIcon } from '@heroicons/react/24/outline'
+import Link from 'next/link'
 
 const Search = () => {
   return (
@@ -14,7 +15,9 @@ const Search = () => {
         </select>
       <input className='flex grow item-center rounded h-[100%] w-[100%] p-2 text-black text-bold' placeholder='Ricerca Amazon.it' type='text'></input>
       <button className='w-[45px] rounded p-1 bg-amazonColors-amazonYellow hover:bg-yellow-500'>
+        <Link href={"/product"}>
         <MagnifyingGlassIcon className='h-[32px] text-black mr-1'/>
+        </Link>
       </button>
     </div>
   )

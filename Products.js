@@ -7,7 +7,7 @@ export const PRODUCTS =[
         img: "../images/product_0_small.jpg",
         price: 140,
         options: "4 prodotti usati",
-        quantity:1 
+        quantity: "1" 
     },
     {
         id:2,
@@ -15,7 +15,7 @@ export const PRODUCTS =[
         img: "../images/product_8_small.webp",
         price: 90,
         options: "L'ultimo 2 prodotti!",
-        quantity:1  
+        quantity:"1"  
     },
     {
         id:3,
@@ -23,7 +23,7 @@ export const PRODUCTS =[
         img: "../images/product_3_small.jpg",
         price: 55,
         options: "12 prodotti usati",
-        quantity:1 
+        quantity: "1" 
     },
     {
         id:4,
@@ -31,7 +31,7 @@ export const PRODUCTS =[
         img: "../images/product_2_small.jpg",
         price: 589,
         options: "Offerta imbattibile",
-        quantity:1  
+        quantity:"1"  
     },
     
 ]

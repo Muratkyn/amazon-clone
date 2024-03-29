@@ -1,9 +1,9 @@
-import React, { useState } from 'react'
+import React from 'react'
 import { useDispatch, useSelector } from 'react-redux'
 import { Rootstate } from '@/redux/store'
-import { ProductProps } from '@/type'
 import Link from 'next/link'
-import { removeFromCart } from '@/redux/CartSlice'
+import { removeFromCart, incrementCart, decrementCart } from '@/redux/CartSlice'
+
 
 const Checkout = () => {
     const items = useSelector((state:Rootstate) => state.cart.products)
@@ -12,7 +12,7 @@ const Checkout = () => {
     subtotal + (product.price * product.quantity), 0
     ))
     const dispatch = useDispatch()
-   
+    
   return (
     <div>
       <div className='h-screen bg-amazonColors-backgroundColor overflow-scroll'>
@@ -50,18 +50,21 @@ const Checkout = () => {
                                               <p className='bg-yellow-300 max-w[20px] rounded p-1 items-center font-semibold text-sm'>✅ Amazon's choice</p>
                                               </div>
                                             </div>
-                                            <div className='grid grid-cols-3 w-20'>
-                                                <div className='text-sm xl:text-xl bg-white border border-solid border-grey shadow-lg rounded pl-1.5 hover:bg-slate-100 cursor-pointer'>-</div>
-                                                <div className='text-sm xl:text-xl bg-white border border-solid border-grey shadow-lg pl-1.5 hover:bg-slate-100 rounded cursor-pointer'>{item.quantity}</div>
-                                                <div className='text-sm xl:text-xl bg-white border border-solid border-grey shadow-lg rounded pl-1.5 hover:bg-slate-100 cursor-pointer'>+</div> 
+                                            <div className='grid grid-cols-3 w-[100px]'>
+                                                <div className='text-sm xl:text-xl bg-white border border-solid border-grey shadow-lg rounded pl-1.5 hover:bg-slate-100 cursor-pointer'
+                                                onClick={()=> dispatch(decrementCart(item.id))}>-</div>
+                                                <div className='text-sm xl:text-xl bg-white border border-solid border-grey shadow-lg pr-1.5 hover:bg-slate-100 rounded cursor-pointer text-right'>{item.quantity}</div>
+                                                <div className='text-sm xl:text-xl bg-white border border-solid border-grey shadow-lg rounded pl-1.5 hover:bg-slate-100 cursor-pointer'
+                                                onClick={()=> dispatch(incrementCart(item.id))}>+</div> 
                                                                                             
                                             </div>
                                             <div className='mt-4 gap-2 flex'>
-                                            <button className='text-xs border border-solid border-grey rounded-lg p-1.5 shadow-lg hover:bg-slate-100' onClick={() => dispatch(removeFromCart(item.id))}>Rimuovi</button>  
-                                            <button className='text-xs border border-solid border-grey rounded-lg p-1.5 shadow-lg hover:bg-slate-100'>Salva per Dopo</button>                                      
-                                            <button className='text-xs border border-solid border-grey rounded-lg p-1.5 shadow-lg hover:bg-slate-100'>Condividi</button>                                      
+                                                <button className='text-xs border border-solid border-grey rounded-lg p-1.5 shadow-lg hover:bg-slate-100' 
+                                                onClick={() => dispatch(removeFromCart(item.id))}>Rimuovi</button>  
+                                                <button className='text-xs border border-solid border-grey rounded-lg p-1.5 shadow-lg hover:bg-slate-100'>Salva per Dopo</button>                                      
+                                                <button className='text-xs border border-solid border-grey rounded-lg p-1.5 shadow-lg hover:bg-slate-100'>Condividi</button>                                      
                                             <Link href={"/product"}>
-                                              <button className='text-xs border border-solid border-grey rounded-lg p-1.5 shadow-lg hover:bg-slate-100'>Visualiiza gli altri articoli simili</button>                                      
+                                                <button className='text-xs border border-solid border-grey rounded-lg p-1.5 shadow-lg hover:bg-slate-100'>Visualiiza gli altri articoli simili</button>                                      
                                             </Link>
                                             </div>
                                         </div>
@@ -72,13 +75,12 @@ const Checkout = () => {
                                 </div>
                             </div>
                           )
-                        } )
+                        })
                       }
                       <div className='text-lg xl:text-xl text-right mb-2 mr-10 '>Totale provissorio ({itemsNumber}): <span 
                       className='font-semibold'>{subtotal}€</span></div>
                   </div>
-
-              <div className='col-span bg-white rounded h-[280px] w-[300px] p-10'>
+                <div className='col-span bg-white rounded h-[280px] w-[300px] p-10'>
                     <div className='text-xs text-green-800 mb-2'> ✅ Benvenuto in Amazon!<span 
                     className='font-bold'>Spedizione GRATUITA</span> sul tuo primo ordine. Selezionare questa opzione al momento della conferma dell’ordine. Dettagli
                      </div>
@@ -87,7 +89,7 @@ const Checkout = () => {
                       <Link href={"/payment"}>
                       <button className='bg-yellow-300 p-1.5 rounded-xl w-[100%] mt-2 text-sm hover:bg-yellow-400 hover:border'>Procedi all'ordine</button>
                       </Link>
-              </div>
+                </div>
               </div>
           </div>
       </div>
