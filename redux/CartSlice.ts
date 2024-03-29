@@ -10,7 +10,6 @@ const initialState = {
     productsNumber: 0,
 }
 
-
 export const cartSlice = createSlice ({
     name: "cart",
     initialState,

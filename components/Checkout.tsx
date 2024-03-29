@@ -31,7 +31,7 @@ const Checkout = () => {
                       <div className='flex flex-col items-end mr-8'>
                         <p>prezzo</p>
                       </div>
-                      {
+                      {itemsNumber > 0 ?          
                         items.map((item) => {
                           return (
                             <div key={item.id}>
@@ -75,10 +75,27 @@ const Checkout = () => {
                                 </div>
                             </div>
                           )
-                        })
+                        }): 
+                        <div>
+                          <div className='w-auto h-auto flex flex-row'>
+                            <div>
+                              <img className='w-[500px] h-[300px] p-10' src="./images/empty-cart_.svg" alt="empty_cart" />
+                            </div>
+                            <div className='p-10'>
+                              <p className='font-bold text-lg'>Il tuo carrello Amazon è vuoto</p>
+                              <Link href={"/product"}>
+                                <p className='text-xs font-semibold text-cyan-700 mb-4'>Acquista le offerte di oggi</p>
+                              </Link>
+                              <button className='bg-yellow-300 p-1 mr-2 rounded-lg text-sm shadow-lg hover:bg-yellow-400 cursor-pointer'>Accedi al tuo account</button>
+                              <button className='bg-white shadow-lg border p-1 mr-2 rounded-lg text-sm hover:bg-gray-100 cursor-pointer'>Iscriviti ora</button>
+
+                            </div>
+                          </div>
+                        </div>
                       }
                       <div className='text-lg xl:text-xl text-right mb-2 mr-10 '>Totale provissorio ({itemsNumber}): <span 
-                      className='font-semibold'>{subtotal}€</span></div>
+                      className='font-semibold'>{subtotal}€</span>
+                      </div>
                   </div>
                 <div className='col-span bg-white rounded h-[280px] w-[300px] p-10'>
                     <div className='text-xs text-green-800 mb-2'> ✅ Benvenuto in Amazon!<span 
