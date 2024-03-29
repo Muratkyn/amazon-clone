@@ -5,10 +5,11 @@ interface Product {
   quantity: string
 } 
 
-const initialState  = {
-    products: [] as any[] ,
+const initialState = {
+    products: [] as any[],
     productsNumber: 0,
 }
+
 
 export const cartSlice = createSlice ({
     name: "cart",

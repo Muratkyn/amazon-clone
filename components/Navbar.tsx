@@ -1,12 +1,13 @@
 "use client"
+
 import React from 'react'
 import { ShoppingCartIcon } from "@heroicons/react/24/outline"
-import Search from './Search'
 import { MapPinIcon } from '@heroicons/react/16/solid'
 import { Bars3Icon } from '@heroicons/react/16/solid'
-import Link from 'next/link'
 import { useSelector } from 'react-redux'
 import { Rootstate } from '@/redux/store'
+import Search from './Search'
+import Link from 'next/link'
 
 const Navbar = () => {
 

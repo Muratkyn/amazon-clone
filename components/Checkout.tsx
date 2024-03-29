@@ -1,9 +1,9 @@
+"use client"
 import React from 'react'
 import { useDispatch, useSelector } from 'react-redux'
 import { Rootstate } from '@/redux/store'
 import Link from 'next/link'
 import { removeFromCart, incrementCart, decrementCart } from '@/redux/CartSlice'
-
 
 const Checkout = () => {
     const items = useSelector((state:Rootstate) => state.cart.products)
@@ -51,10 +51,10 @@ const Checkout = () => {
                                               </div>
                                             </div>
                                             <div className='grid grid-cols-3 w-[100px]'>
-                                                <div className='text-sm xl:text-xl bg-white border border-solid border-grey shadow-lg rounded pl-1.5 hover:bg-slate-100 cursor-pointer'
+                                                <div className='text-sm xl:text-xl bg-white border border-solid border-grey shadow-lg rounded pl-3 hover:bg-slate-100 cursor-pointer'
                                                 onClick={()=> dispatch(decrementCart(item.id))}>-</div>
                                                 <div className='text-sm xl:text-xl bg-white border border-solid border-grey shadow-lg pr-1.5 hover:bg-slate-100 rounded cursor-pointer text-right'>{item.quantity}</div>
-                                                <div className='text-sm xl:text-xl bg-white border border-solid border-grey shadow-lg rounded pl-1.5 hover:bg-slate-100 cursor-pointer'
+                                                <div className='text-sm xl:text-xl bg-white border border-solid border-grey shadow-lg rounded pl-2 hover:bg-slate-100 cursor-pointer'
                                                 onClick={()=> dispatch(incrementCart(item.id))}>+</div> 
                                                                                             
                                             </div>
