@@ -45,9 +45,9 @@ const Checkout = () => {
                                                 {item.productName}
                                             </div>
                                             <div className='max-w-[150px] mb-2 mt-2'>
-                                              <p className='text-sm text-orange-400 mr-3 font-semibold'>({item.options})</p>
+                                              <p className='text-sm mr-3'>({item.options})</p>
                                               <div className='flex mt-2'>
-                                              <p className='bg-yellow-500 max-w[20px] rounded p-1 items-center font-bold text-sm'>Amazon's choice</p>
+                                              <p className='bg-yellow-300 max-w[20px] rounded p-1 items-center font-semibold text-sm'>✅ Amazon's choice</p>
                                               </div>
                                             </div>
                                             <div className='grid grid-cols-3 w-20'>
@@ -79,13 +79,13 @@ const Checkout = () => {
                   </div>
 
               <div className='col-span bg-white rounded h-[280px] w-[300px] p-10'>
-                    <div className='text-xs text-green-800 mb-2'>Benvenuto in Amazon!<span 
+                    <div className='text-xs text-green-800 mb-2'> ✅ Benvenuto in Amazon!<span 
                     className='font-bold'>Spedizione GRATUITA</span> sul tuo primo ordine. Selezionare questa opzione al momento della conferma dell’ordine. Dettagli
                      </div>
                     <div className='text-base xl:text-lg mb-4 '>Totale provissorio({itemsNumber} articoli): <span 
                       className='font-semibold'>{subtotal}€</span></div>
                       <Link href={"/payment"}>
-                      <button className='bg-yellow-500 p-2 rounded-xl w-[100%]  hover:bg-yellow-600 hover:border'>Procedi all'ordine</button>
+                      <button className='bg-yellow-300 p-1.5 rounded-xl w-[100%] mt-2 text-sm hover:bg-yellow-400 hover:border'>Procedi all'ordine</button>
                       </Link>
               </div>
               </div>

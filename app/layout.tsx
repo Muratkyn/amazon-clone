@@ -6,7 +6,7 @@ import { StoreProvider } from "@/redux/StoreProvider";
 const inter = Inter({ subsets: ["latin"] });
 
 export const metadata: Metadata = {
-  title: "Amazon.com:electonics,books,music",
+  title: "Amazon.it:electonics,books,music",
   description: "This is an Amazon clone project created with Next.js 14",
 };
 
@@ -17,8 +17,6 @@ export default function RootLayout({
 }>) {
   return (
     <StoreProvider>
-
-
     <html lang="en">
       <body className={inter.className}>{children}</body>
     </html>
