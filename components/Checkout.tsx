@@ -27,10 +27,16 @@ const Checkout = () => {
               <div className='grid grid-cols-8 gap-10 mb-12'>
                 {/* Products */}
                   <div className='col-span-6 bg-white'>
-                      <div className='text-2xl xl:text-3xl mt-4 pl-10'>Carrello</div>
-                      <div className='flex flex-col items-end mr-8'>
-                        <p>prezzo</p>
-                      </div>
+                      {
+                        itemsNumber > 0 ?
+                        <div>
+                            <div className='text-2xl xl:text-3xl mt-4 pl-10'>Carrello</div>
+                            <div className='flex flex-col items-end mr-8'>
+                              <p>prezzo</p>
+                            </div>
+                        </div>
+                        : <span></span>
+                      }
                       {itemsNumber > 0 ?          
                         items.map((item) => {
                           return (
@@ -81,28 +87,32 @@ const Checkout = () => {
                             <div>
                               <img className='w-[500px] h-[300px] p-10' src="./images/empty-cart_.svg" alt="empty_cart" />
                             </div>
-                            <div className='p-10'>
-                              <p className='font-bold text-lg'>Il tuo carrello Amazon è vuoto</p>
+                            <div className='p-6 mt-6'>
+                              <p className='font-bold text-lg '>Il tuo carrello Amazon è vuoto</p>
                               <Link href={"/product"}>
                                 <p className='text-xs font-semibold text-cyan-700 mb-4'>Acquista le offerte di oggi</p>
                               </Link>
                               <button className='bg-yellow-300 p-1 mr-2 rounded-lg text-sm shadow-lg hover:bg-yellow-400 cursor-pointer'>Accedi al tuo account</button>
                               <button className='bg-white shadow-lg border p-1 mr-2 rounded-lg text-sm hover:bg-gray-100 cursor-pointer'>Iscriviti ora</button>
-
                             </div>
                           </div>
                         </div>
                       }
+                      {
+                        itemsNumber > 0 ?
                       <div className='text-lg xl:text-xl text-right mb-2 mr-10 '>Totale provissorio ({itemsNumber}): <span 
                       className='font-semibold'>{subtotal}€</span>
                       </div>
+                        : <div></div>
+                      }
                   </div>
                 <div className='col-span bg-white rounded h-[280px] w-[300px] p-10'>
                     <div className='text-xs text-green-800 mb-2'> ✅ Benvenuto in Amazon!<span 
                     className='font-bold'>Spedizione GRATUITA</span> sul tuo primo ordine. Selezionare questa opzione al momento della conferma dell’ordine. Dettagli
                      </div>
                     <div className='text-base xl:text-lg mb-4 '>Totale provissorio({itemsNumber} articoli): <span 
-                      className='font-semibold'>{subtotal}€</span></div>
+                      className='font-semibold'>{subtotal}€</span>
+                    </div>
                       <Link href={"/payment"}>
                       <button className='bg-yellow-300 p-1.5 rounded-xl w-[100%] mt-2 text-sm hover:bg-yellow-400 hover:border'>Procedi all'ordine</button>
                       </Link>
