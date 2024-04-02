@@ -1,16 +1,24 @@
 "use client"
-import React from 'react'
+
+import React, { useState }from 'react'
 import { ShoppingCartIcon } from "@heroicons/react/24/outline"
-import Search from './Search'
 import { MapPinIcon } from '@heroicons/react/16/solid'
 import { Bars3Icon } from '@heroicons/react/16/solid'
-import Link from 'next/link'
+import { UserCircleIcon } from '@heroicons/react/16/solid'
+import { XMarkIcon } from '@heroicons/react/16/solid'
+import {motion} from "framer-motion" 
 import { useSelector } from 'react-redux'
 import { Rootstate } from '@/redux/store'
+import Search from './Search'
+import Link from 'next/link'
 
 const Navbar = () => {
 
     const cart = useSelector((state:Rootstate) => state.cart.productsNumber )
+    const [navbarOpen, setNavbarOen] = useState(false)
+    const toggleNavbar = () => {
+        setNavbarOen(!navbarOpen)
+    }
 
   return (
     <header className='min-w-[1000px]'>
@@ -22,7 +30,7 @@ const Navbar = () => {
                 </Link>
                 <div className='pr-4 pl-4 reltive'>
                     <div className='text-xs xl:text-sm text-gray-300 '>
-                        In consegna a
+                        In consegna a Monza
                     </div>
                     <div className='text-sm xl:text-base font-bold flex items-center '>
                         <MapPinIcon className='h-[15px]'/>
@@ -64,12 +72,62 @@ const Navbar = () => {
                             Carrello
                         </div>
                     </Link>
-                        
                 </div>
             </div>
         </div>
-        <div className='flex items-center justify-center bg-amazonColors-lightBlue text-white space-x-5 text-xs xl:text-sm p-2 pl-1 gap-1 cursor-pointer '>
-            <Bars3Icon className='h-[28px]'/>
+        <div className='flex items-center justify-center bg-amazonColors-lightBlue text-white space-x-5 text-xs xl:text-sm p-2 pl-1 gap-1 cursor-pointer md:text-xs lg:text-xs '>
+            <Bars3Icon onClick={() => toggleNavbar()} className='h-[28px]'/>
+            {navbarOpen && 
+            <div onClick={() => toggleNavbar()}>
+                <div className='w-full h-screen top-0 left-0 text-black bg-opacity-60  bg-amazonColors-lightBlue flex flex-column fixed z-50'> 
+                  <motion.div initial={{x: -500, opacity: 0}} animate={{x: 0 , opacity:1}} transition={{duration: .4}} className='w-[380px] h-full bg-white '>
+                    <div className='flex gap-2 w-full flex-column justify-start items-center text-white bg-amazonColors-lightBlue px-8 py-2 text-lg font-bold '>
+                        <UserCircleIcon className='w-[30px] h-[30px]'/>
+                        Ciao, accedi        
+                        <span className='w-[10px] flex flex-col justify-end ml-36'>    
+                            <XMarkIcon onClick={() => toggleNavbar()} className='text-white w-[40px] h-[50px]'/>
+                        </span>
+                    </div>
+                    <div className=' w-full h-screen overflow-scroll'>
+                    <div className='p-8 gap-6 flex flex-col border border-solid border-y-10'>
+                        <h2 className='text-lg font-bold'>Di tendenza</h2>
+                        <p>Bestseller</p>
+                        <p>Novita'</p>
+                        <p>I prodotti del momento</p>
+                    </div>
+                    <div className='p-8 gap-6 flex flex-col border border-solid border-y-10'>
+                        <h2 className='text-lg font-bold'>Dispostivi e contenuti digitali</h2>
+                        <p>Amazon Primew Video</p>
+                        <p>Amazon Mucis</p>
+                        <p>Amazon Photos</p>
+                        <p>Echo e Alexa</p>
+                        <p>Amazon Fire Tv</p>
+                        <p>E-reader eBook Kindle</p>
+                        <p>App Store per Android</p>
+                        <p>Audolibri Audible</p>
+                    </div>
+                    <div className='p-8 gap-6 flex flex-col border border-solid border-y-10'>
+                        <h2 className='text-lg font-bold'>Scegli per Categoria</h2>
+                        <p>Amazon Primew Video</p>
+                        <p>Amazon Mucis</p>
+                        <p>Amazon Photos</p>
+                        <p>Echo e Alexa</p>
+                        <p>Amazon Fire Tv</p>
+                        <p>E-reader eBook Kindle</p>
+                        <p>App Store per Android</p>
+                        <p>Audolibri Audible</p>
+                    </div>
+                    <div className='p-8 gap-6 flex flex-col border border-solid border-y-10 mb-8'>
+                        <h2 className='text-lg font-bold'>Aiuta e impostazioni</h2>
+                        <p>Il mio Account</p>
+                        <p>Servizio Clienti</p>
+                        <p>Accedi</p>
+                    </div>
+                    </div>
+                  </motion.div>
+                </div>
+            </div>
+            }
            <Link className="justify-start flex" href="/product">
             Tutte</Link>
             <div>Bestseller</div>

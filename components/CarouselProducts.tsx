@@ -8,21 +8,20 @@ import "swiper/css";
 
 const CarouselProducts = () => {
   return (
-    <div className='bg-white m-3 p-5'>
+    <div className='bg-white m-3 p-5 w-auto'>
         <div className='text-2xl font-semibold p-3'>Best sellers
         <Swiper
             slidesPerView={6}
-            loop ={true}
             spaceBetween={10}
             navigation={true}
             modules={[Navigation]}
+            loop={true}
         >
             {
                 Array.from ( { length: 9 }, (_, i) => 
-                <SwiperSlide className='m-1' key={i}>
+                <SwiperSlide key={i} className='relative'>
                     <Link href={`/product`}>
-                    
-                    <img src={`../images/product_${i}_small.jpg`} alt="" />
+                    <img src={`../images/product_${i}_small.jpg`}  alt="img" />
                     </Link>
                 </SwiperSlide>
                 )

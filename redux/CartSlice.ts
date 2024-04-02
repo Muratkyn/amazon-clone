@@ -1,12 +1,12 @@
-import { createSlice } from "@reduxjs/toolkit";
+import { PayloadAction, createSlice } from "@reduxjs/toolkit";
 
 interface Product {
-products: string[] 
-productsNumber: number,
+  id: number,
+  quantity: string
+} 
 
-}
-const initialState : Product = {
-    products: [],
+const initialState = {
+    products: [] as any[],
     productsNumber: 0,
 }
 
@@ -14,7 +14,7 @@ export const cartSlice = createSlice ({
     name: "cart",
     initialState,
     reducers: {
-        addToCart: (state, action) => {
+        addToCart: (state, action: PayloadAction< Product >) => {
             const addProductExists = state.products.find(
                 (product) => product.id === action.payload.id
               );
@@ -31,7 +31,7 @@ export const cartSlice = createSlice ({
             state.productsNumber += 1;
             
         },
-        removeFromCart : (state,action) => {
+        removeFromCart : (state,action: PayloadAction< Product>) => {
           const productToRemove = state.products.find(
             (product) => product.id === action.payload
           );
@@ -43,10 +43,29 @@ export const cartSlice = createSlice ({
           );
           state.products.splice(index, 1);
           console.log(action.payload)
-        }
+        },
+        incrementCart: (state, action: PayloadAction< Product>) => {
+          const itemInc = state.products.find((item) => item.id === action.payload);
+          if (itemInc.quantity >= 1) {
+            itemInc.quantity = itemInc.quantity + 1;
+          }
+          state.productsNumber = state.productsNumber + 1;
+        },
+        decrementCart: (state, action: PayloadAction< Product >) => {
+          const itemDec = state.products.find((item) => item.id === action.payload);
+          if (itemDec.quantity === 1) {
+            const index = state.products.findIndex(
+              (item) => item.id === action.payload
+            );
+            state.products.splice(index, 1);
+          } else {
+            itemDec.quantity--;
+          }
+          state.productsNumber = state.productsNumber - 1;
+      },
     }
 })
 
 
-export const {addToCart, removeFromCart} = cartSlice.actions
+export const {addToCart, removeFromCart,incrementCart, decrementCart} = cartSlice.actions
 export default cartSlice.reducer

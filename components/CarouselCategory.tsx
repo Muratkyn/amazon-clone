@@ -9,8 +9,8 @@ import "swiper/css";
 
 const CarouselCategory = () => {
   return (
-    <div className='bg-white max-w-[1480px] m-auto p-5  '>
-        <div className="text-2xl font-semibold m-auto">Festa delle Offerte di Primavera per categoria</div>
+    <div className='bg-white max-w-[1480px] m-auto p-5'>
+        <div className="text-2xl font-semibold m-auto" >Festa delle Offerte di Primavera per categoria</div>
           <Link href={"/product"}>
             <Swiper
                 slidesPerView={6}
@@ -18,6 +18,7 @@ const CarouselCategory = () => {
                 spaceBetween={10}
                 navigation={true}
                 modules={[Navigation]}
+                
             >
                 <SwiperSlide>
                     <img src={'/images/carousel-category1.jpg'}></img>

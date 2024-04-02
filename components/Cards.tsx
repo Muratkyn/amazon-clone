@@ -9,7 +9,7 @@ interface Props {
 
 const Cards = ({title, img, link}: Props) => {
   return (
-    <div className='h-[420px] bg-white z-30 m-3 '>
+    <div className='h-[420px] bg-white m-3 '>
       <Link href={"/product"}>
         <div className='text-lg xl:text-xl font-semibold ml-4 mt-4'>
           {title}

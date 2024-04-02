@@ -1,9 +1,9 @@
-import React, { useState } from 'react'
+"use client"
+import React from 'react'
 import { useDispatch, useSelector } from 'react-redux'
 import { Rootstate } from '@/redux/store'
-import { ProductProps } from '@/type'
 import Link from 'next/link'
-import { removeFromCart } from '@/redux/CartSlice'
+import { removeFromCart, incrementCart, decrementCart } from '@/redux/CartSlice'
 
 const Checkout = () => {
     const items = useSelector((state:Rootstate) => state.cart.products)
@@ -12,7 +12,7 @@ const Checkout = () => {
     subtotal + (product.price * product.quantity), 0
     ))
     const dispatch = useDispatch()
-   
+    
   return (
     <div>
       <div className='h-screen bg-amazonColors-backgroundColor overflow-scroll'>
@@ -27,11 +27,17 @@ const Checkout = () => {
               <div className='grid grid-cols-8 gap-10 mb-12'>
                 {/* Products */}
                   <div className='col-span-6 bg-white'>
-                      <div className='text-2xl xl:text-3xl mt-4 pl-10'>Carrello</div>
-                      <div className='flex flex-col items-end mr-8'>
-                        <p>prezzo</p>
-                      </div>
                       {
+                        itemsNumber > 0 ?
+                        <div>
+                            <div className='text-2xl xl:text-3xl mt-4 pl-10'>Carrello</div>
+                            <div className='flex flex-col items-end mr-8'>
+                              <p>prezzo</p>
+                            </div>
+                        </div>
+                        : <span></span>
+                      }
+                      {itemsNumber > 0 ?          
                         items.map((item) => {
                           return (
                             <div key={item.id}>
@@ -45,23 +51,26 @@ const Checkout = () => {
                                                 {item.productName}
                                             </div>
                                             <div className='max-w-[150px] mb-2 mt-2'>
-                                              <p className='text-sm text-orange-400 mr-3 font-semibold'>({item.options})</p>
+                                              <p className='text-sm mr-3'>({item.options})</p>
                                               <div className='flex mt-2'>
-                                              <p className='bg-yellow-500 max-w[20px] rounded p-1 items-center font-bold text-sm'>Amazon's choice</p>
+                                              <p className='bg-yellow-300 max-w[20px] rounded p-1 items-center font-semibold text-sm'>✅ Amazon's choice</p>
                                               </div>
                                             </div>
-                                            <div className='grid grid-cols-3 w-20'>
-                                                <div className='text-sm xl:text-xl bg-white border border-solid border-grey shadow-lg rounded pl-1.5 hover:bg-slate-100 cursor-pointer'>-</div>
-                                                <div className='text-sm xl:text-xl bg-white border border-solid border-grey shadow-lg pl-1.5 hover:bg-slate-100 rounded cursor-pointer'>{item.quantity}</div>
-                                                <div className='text-sm xl:text-xl bg-white border border-solid border-grey shadow-lg rounded pl-1.5 hover:bg-slate-100 cursor-pointer'>+</div> 
+                                            <div className='grid grid-cols-3 w-[100px]'>
+                                                <div className='text-sm xl:text-xl bg-white border border-solid border-grey shadow-lg rounded pl-3 hover:bg-slate-100 cursor-pointer'
+                                                onClick={()=> dispatch(decrementCart(item.id))}>-</div>
+                                                <div className='text-sm xl:text-xl bg-white border border-solid border-grey shadow-lg pr-1.5 hover:bg-slate-100 rounded cursor-pointer text-right'>{item.quantity}</div>
+                                                <div className='text-sm xl:text-xl bg-white border border-solid border-grey shadow-lg rounded pl-2 hover:bg-slate-100 cursor-pointer'
+                                                onClick={()=> dispatch(incrementCart(item.id))}>+</div> 
                                                                                             
                                             </div>
                                             <div className='mt-4 gap-2 flex'>
-                                            <button className='text-xs border border-solid border-grey rounded-lg p-1.5 shadow-lg hover:bg-slate-100' onClick={() => dispatch(removeFromCart(item.id))}>Rimuovi</button>  
-                                            <button className='text-xs border border-solid border-grey rounded-lg p-1.5 shadow-lg hover:bg-slate-100'>Salva per Dopo</button>                                      
-                                            <button className='text-xs border border-solid border-grey rounded-lg p-1.5 shadow-lg hover:bg-slate-100'>Condividi</button>                                      
+                                                <button className='text-xs border border-solid border-grey rounded-lg p-1.5 shadow-lg hover:bg-slate-100' 
+                                                onClick={() => dispatch(removeFromCart(item.id))}>Rimuovi</button>  
+                                                <button className='text-xs border border-solid border-grey rounded-lg p-1.5 shadow-lg hover:bg-slate-100'>Salva per Dopo</button>                                      
+                                                <button className='text-xs border border-solid border-grey rounded-lg p-1.5 shadow-lg hover:bg-slate-100'>Condividi</button>                                      
                                             <Link href={"/product"}>
-                                              <button className='text-xs border border-solid border-grey rounded-lg p-1.5 shadow-lg hover:bg-slate-100'>Visualiiza gli altri articoli simili</button>                                      
+                                                <button className='text-xs border border-solid border-grey rounded-lg p-1.5 shadow-lg hover:bg-slate-100'>Visualiiza gli altri articoli simili</button>                                      
                                             </Link>
                                             </div>
                                         </div>
@@ -72,22 +81,42 @@ const Checkout = () => {
                                 </div>
                             </div>
                           )
-                        } )
+                        }): 
+                        <div>
+                          <div className='w-auto h-auto flex flex-row'>
+                            <div>
+                              <img className='w-[500px] h-[300px] p-10' src="./images/empty-cart_.svg" alt="empty_cart" />
+                            </div>
+                            <div className='p-6 mt-6'>
+                              <p className='font-bold text-lg '>Il tuo carrello Amazon è vuoto</p>
+                              <Link href={"/product"}>
+                                <p className='text-xs font-semibold text-cyan-700 mb-4'>Acquista le offerte di oggi</p>
+                              </Link>
+                              <button className='bg-yellow-300 p-1 mr-2 rounded-lg text-sm shadow-lg hover:bg-yellow-400 cursor-pointer'>Accedi al tuo account</button>
+                              <button className='bg-white shadow-lg border p-1 mr-2 rounded-lg text-sm hover:bg-gray-100 cursor-pointer'>Iscriviti ora</button>
+                            </div>
+                          </div>
+                        </div>
                       }
+                      {
+                        itemsNumber > 0 ?
                       <div className='text-lg xl:text-xl text-right mb-2 mr-10 '>Totale provissorio ({itemsNumber}): <span 
-                      className='font-semibold'>{subtotal}€</span></div>
+                      className='font-semibold'>{subtotal}€</span>
+                      </div>
+                        : <div></div>
+                      }
                   </div>
-
-              <div className='col-span bg-white rounded h-[280px] w-[300px] p-10'>
-                    <div className='text-xs text-green-800 mb-2'>Benvenuto in Amazon!<span 
+                <div className='col-span bg-white rounded h-[280px] w-[300px] p-10'>
+                    <div className='text-xs text-green-800 mb-2'> ✅ Benvenuto in Amazon!<span 
                     className='font-bold'>Spedizione GRATUITA</span> sul tuo primo ordine. Selezionare questa opzione al momento della conferma dell’ordine. Dettagli
                      </div>
                     <div className='text-base xl:text-lg mb-4 '>Totale provissorio({itemsNumber} articoli): <span 
-                      className='font-semibold'>{subtotal}€</span></div>
+                      className='font-semibold'>{subtotal}€</span>
+                    </div>
                       <Link href={"/payment"}>
-                      <button className='bg-yellow-500 p-2 rounded-xl w-[100%]  hover:bg-yellow-600 hover:border'>Procedi all'ordine</button>
+                      <button className='bg-yellow-300 p-1.5 rounded-xl w-[100%] mt-2 text-sm hover:bg-yellow-400 hover:border'>Procedi all'ordine</button>
                       </Link>
-              </div>
+                </div>
               </div>
           </div>
       </div>
