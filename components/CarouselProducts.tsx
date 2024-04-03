@@ -32,5 +32,4 @@ const CarouselProducts = () => {
     </div>
   )
 }
-
 export default CarouselProducts

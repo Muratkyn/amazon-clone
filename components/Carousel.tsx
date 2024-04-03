@@ -7,7 +7,6 @@ import Link from 'next/link';
 import "swiper/css/navigation";
 import "swiper/css";
 
-
 const Carousel = () => {
   return (
     <div className='h-[500px]'>
