@@ -18,7 +18,6 @@ const CarouselCategory = () => {
                 spaceBetween={10}
                 navigation={true}
                 modules={[Navigation]}
-                
             >
                 <SwiperSlide>
                     <img src={'/images/carousel-category1.jpg'}></img>
