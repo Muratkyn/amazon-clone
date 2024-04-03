@@ -15,8 +15,15 @@ import Link from 'next/link'
 const Navbar = () => {
     const cart = useSelector((state:Rootstate) => state.cart.productsNumber )
     const [navbarOpen, setNavbarOen] = useState(false)
+    const [onHover, setOnHover] = useState(false)
     const toggleNavbar = () => {
         setNavbarOen(!navbarOpen)
+    }
+    const hoverTrue = () => {
+        setOnHover(true)
+    }
+    const hoverFalse = () => {
+        setOnHover(false)
     }
 
   return (
@@ -59,7 +66,7 @@ const Navbar = () => {
                         e ordini
                     </div>
                 </div>
-                <div >
+                <div className='hover:border' onMouseOver={() => hoverTrue()} onMouseOut={() => hoverFalse() }>
                     <Link href={"/checkout"} className='flex pr-3 pl-3'>
                     <ShoppingCartIcon className='h-[50px] relative' />
                     <div className='relative'>
@@ -71,6 +78,20 @@ const Navbar = () => {
                             Carrello
                         </div>
                     </Link>
+                    {/* {onHover && 
+                       <div className='w-[100px] h-screen top-0 left-20  flex flex-column fixed z-50'> 
+                        <div className='fixed z-50 mt-14 '> 
+                          <motion.div initial={{x: 2000 }} animate={{x: 1500 }} transition={{duration: .4}} className='w-[300px] h-full bg-white '>
+                            <div className='flex gap-2 w-full flex-column justify-start items-center text-white bg-amazonColors-lightBlue px-8 py-3 text-md font-bold '>
+                                Cart Items        
+                            </div>
+                            <div className=' w-full h-screen overflow-scroll'>
+                                <CartItems />
+                            </div>
+                          </motion.div>
+                        </div>
+                        </div>
+                    } */}
                 </div>
             </div>
         </div>

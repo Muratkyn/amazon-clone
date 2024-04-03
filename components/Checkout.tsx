@@ -61,8 +61,7 @@ const Checkout = () => {
                                                 onClick={()=> dispatch(decrementCart(item.id))}>-</div>
                                                 <div className='text-sm xl:text-xl bg-white border border-solid border-grey shadow-lg pr-1.5 hover:bg-slate-100 rounded cursor-pointer text-right'>{item.quantity}</div>
                                                 <div className='text-sm xl:text-xl bg-white border border-solid border-grey shadow-lg rounded pl-2 hover:bg-slate-100 cursor-pointer'
-                                                onClick={()=> dispatch(incrementCart(item.id))}>+</div> 
-                                                                                            
+                                                onClick={()=> dispatch(incrementCart(item.id))}>+</div>                                                                                            
                                             </div>
                                             <div className='mt-4 gap-2 flex'>
                                                 <button className='text-xs border border-solid border-grey rounded-lg p-1.5 shadow-lg hover:bg-slate-100' 

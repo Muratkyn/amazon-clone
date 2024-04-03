@@ -6,7 +6,7 @@ import { StoreProvider } from "@/redux/StoreProvider";
 const inter = Inter({ subsets: ["latin"] });
 
 export const metadata: Metadata = {
-  title: "Amazon.it:electonics,books,music",
+  title: "Amazon.it: elettronica | books,music",
   description: "This is an Amazon clone project created with Next.js 14",
 };
 

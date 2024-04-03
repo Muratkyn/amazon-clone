@@ -10,6 +10,7 @@ const initialState = {
     productsNumber: 0,
 }
 
+
 export const cartSlice = createSlice ({
     name: "cart",
     initialState,
@@ -26,10 +27,8 @@ export const cartSlice = createSlice ({
                   quantity: parseInt(action.payload.quantity),
                 });
               }
-            
             console.log(action.payload)
             state.productsNumber += 1;
-            
         },
         removeFromCart : (state,action: PayloadAction< Product>) => {
           const productToRemove = state.products.find(
