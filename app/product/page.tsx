@@ -104,7 +104,7 @@ const page = () => {
             <p className='ml-2'>e piu</p>
           </div>
           <div>
-            <p className='font-bold text-sm'>Prezzo</p>
+            <p className='font-bold text-'>Prezzo</p>
             <div className='text-sm gap-2 flex flex-col justify-center m-1 cursor-pointer'>
                 <p>Fino a 5 EUR</p>
                 <p>5 a 10 EUR</p>

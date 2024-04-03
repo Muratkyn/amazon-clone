@@ -6,14 +6,13 @@ import { MapPinIcon } from '@heroicons/react/16/solid'
 import { Bars3Icon } from '@heroicons/react/16/solid'
 import { UserCircleIcon } from '@heroicons/react/16/solid'
 import { XMarkIcon } from '@heroicons/react/16/solid'
-import {motion} from "framer-motion" 
+import { motion } from "framer-motion" 
 import { useSelector } from 'react-redux'
 import { Rootstate } from '@/redux/store'
 import Search from './Search'
 import Link from 'next/link'
 
 const Navbar = () => {
-
     const cart = useSelector((state:Rootstate) => state.cart.productsNumber )
     const [navbarOpen, setNavbarOen] = useState(false)
     const toggleNavbar = () => {
@@ -26,7 +25,7 @@ const Navbar = () => {
             { /* Left */}
             <div className='flex items-center p- m-4'>
                 <Link href={"/"}>
-                    <img className='h-[35px] w-[110px] m-2 ' src='../images/amazon.png'></img>
+                    <img className='h-[35px] w-[110px] m-2' src='../images/amazon.png'></img>
                 </Link>
                 <div className='pr-4 pl-4 reltive'>
                     <div className='text-xs xl:text-sm text-gray-300 '>
@@ -79,9 +78,9 @@ const Navbar = () => {
             <Bars3Icon onClick={() => toggleNavbar()} className='h-[28px]'/>
             {navbarOpen && 
             <div onClick={() => toggleNavbar()}>
-                <div className='w-full h-screen top-0 left-0 text-black bg-opacity-60  bg-amazonColors-lightBlue flex flex-column fixed z-50'> 
+                <div className='w-full h-screen top-0 left-0 text-black bg-opacity-80  bg-black flex flex-column fixed z-50'> 
                   <motion.div initial={{x: -500, opacity: 0}} animate={{x: 0 , opacity:1}} transition={{duration: .4}} className='w-[380px] h-full bg-white '>
-                    <div className='flex gap-2 w-full flex-column justify-start items-center text-white bg-amazonColors-lightBlue px-8 py-2 text-lg font-bold '>
+                    <div className='flex gap-2 w-full flex-column justify-start items-center text-white bg-amazonColors-lightBlue px-8 py-0.5 text-lg font-bold '>
                         <UserCircleIcon className='w-[30px] h-[30px]'/>
                         Ciao, accedi        
                         <span className='w-[10px] flex flex-col justify-end ml-36'>    
@@ -89,7 +88,7 @@ const Navbar = () => {
                         </span>
                     </div>
                     <div className=' w-full h-screen overflow-scroll'>
-                    <div className='p-8 gap-6 flex flex-col border border-solid border-y-10'>
+                    <div className='p-6 gap-6 flex flex-col border border-solid border-y-10'>
                         <h2 className='text-lg font-bold'>Di tendenza</h2>
                         <p>Bestseller</p>
                         <p>Novita'</p>
@@ -97,7 +96,7 @@ const Navbar = () => {
                     </div>
                     <div className='p-8 gap-6 flex flex-col border border-solid border-y-10'>
                         <h2 className='text-lg font-bold'>Dispostivi e contenuti digitali</h2>
-                        <p>Amazon Primew Video</p>
+                        <p>Amazon Prime Video</p>
                         <p>Amazon Mucis</p>
                         <p>Amazon Photos</p>
                         <p>Echo e Alexa</p>
@@ -128,10 +127,10 @@ const Navbar = () => {
                 </div>
             </div>
             }
-           <Link className="justify-start flex" href="/product">
+           <Link className='font-bold' href="/product">
             Tutte</Link>
             <div>Bestseller</div>
-            <div>Novita</div>
+            <div>Novita'</div>
             <div>Amazon Basics</div>
             <div>Offerte</div>
             <div>Prime</div>
