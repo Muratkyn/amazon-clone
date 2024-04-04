@@ -11,6 +11,7 @@ import { useSelector } from 'react-redux'
 import { Rootstate } from '@/redux/store'
 import Search from './Search'
 import Link from 'next/link'
+import CartItems from './CartItems'
 
 const Navbar = () => {
     const cart = useSelector((state:Rootstate) => state.cart.productsNumber )
@@ -30,7 +31,7 @@ const Navbar = () => {
     <header className='min-w-[1000px]'>
         <div className='flex bg-amazonColors-default text-white h-[60px]'>
             { /* Left */}
-            <div className='flex items-center p- m-4'>
+            <div className='flex items-center p-2 m-4'>
                 <Link href={"/"}>
                     <img className='h-[35px] w-[110px] m-2' src='../images/amazon.png' alt='img'></img>
                 </Link>
@@ -78,24 +79,25 @@ const Navbar = () => {
                             Carrello
                         </div>
                     </Link>
-                    {/* {onHover && 
-                       <div className='w-[100px] h-screen top-0 left-20  flex flex-column fixed z-50'> 
+                    {onHover && 
+                       <div className='w-[600px] top-0 left-0  flex flex-column fixed z-50'> 
                         <div className='fixed z-50 mt-14 '> 
-                          <motion.div initial={{x: 2000 }} animate={{x: 1500 }} transition={{duration: .4}} className='w-[300px] h-full bg-white '>
-                            <div className='flex gap-2 w-full flex-column justify-start items-center text-white bg-amazonColors-lightBlue px-8 py-3 text-md font-bold '>
-                                Cart Items        
-                            </div>
-                            <div className=' w-full h-screen overflow-scroll'>
+                          <motion.div initial={{x: -500 }} animate={{x: 1400 }}  transition={{  duration: 0 }} className=' bg-white'>
+                            <div>
+                                <div className=' gap-2 w-full justify-start items-center text-black bg-yellow-400 px-8 py-3 text-lg font-bold border-black border-solid '>
+                                    Carrello ( {cart} )                                   
+                                </div>                        
                                 <CartItems />
                             </div>
+   
                           </motion.div>
                         </div>
                         </div>
-                    } */}
+                    }
                 </div>
             </div>
         </div>
-        <div className='flex items-center justify-center bg-amazonColors-lightBlue text-white space-x-5 text-xs xl:text-sm p-2 pl-1 gap-1 cursor-pointer md:text-xs lg:text-xs '>
+        <div className='flex items-center justify-evenly bg-amazonColors-lightBlue text-white space-x-5 text-xs xl:text-sm p-1 pl-1 gap-1 cursor-pointer md:text-xs lg:text-xs '>
             <Bars3Icon onClick={() => toggleNavbar()} className='h-[28px]'/>
             {navbarOpen && 
             <div onClick={() => toggleNavbar()}>
@@ -152,7 +154,7 @@ const Navbar = () => {
             Tutte</Link>
             <div>Bestseller</div>
             <div>Novita'</div>
-            <div>Amazon Basics</div>
+            <div>Amazon</div>
             <div>Offerte</div>
             <div>Prime</div>
             <div>Musica</div>
@@ -161,17 +163,15 @@ const Navbar = () => {
             <div>Informatica</div>
             <div>Elettronica</div>
             <div>Casa e cucina</div>
-            <div>Giochi e giocattoli</div>
-            <div>Videogiochi</div>
-            <div>Supermercato</div>
-            <div>Audible</div>
-            <div className='flex items-center'>
+            <div>Domestici</div>
+            <div>Animali</div>
+            <div>Auto</div>
+            <div className='flex items-center justify-end md:text-md text-xs'>
                 <img className='w-[30px] h-[30px] ml-4' src="./images/play.svg" alt="" />
                 <Link href={"https://www.primevideo.com/-/it/offers/nonprimehomepage/ref=atv_hom_offers_c_9zZ8D2_hom"}>
                 <p className='pl-2 text-cyan-500 text-md font-bold'>AMAZON PRIME <span className='text-white text-sm'>| Iscriviti, gratis per 30 giorni</span></p>
                 </Link>
-            </div>
-            
+            </div> 
         </div>
     </header>
   )

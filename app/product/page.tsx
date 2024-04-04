@@ -3,6 +3,7 @@
 import React, { useState } from 'react'
 import Navbar from '@/components/Navbar'
 import ProductPage from '@/components/ProductPage'
+import Footer from '@/components/Footer'
 
 
 const page = () => {
@@ -10,7 +11,7 @@ const page = () => {
   return (
     <div>
       <Navbar />
-      <div className='grid grid-cols-6 m-8 p-10 bg-amazonColors-backgroundColor h-[1200px]'>
+      <div className='grid grid-cols-6 m-8 p-10 bg-amazonColors-backgroundColor h-[1000px]'>
         <div>
             <p className='font-bold text-sm '>Idoneo all spedizione gratuita</p>
                 <div className='flex mb-4'>
@@ -116,6 +117,7 @@ const page = () => {
         </div>
         <ProductPage />
       </div>
+      <Footer />
     </div>
   )
 }

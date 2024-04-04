@@ -47,7 +47,7 @@ const Checkout = () => {
                                             <img className='p-16' src={item.img} alt="small" />
                                         </div>
                                         <div className='col-span-6 p-10 '> 
-                                            <div className='font-medium mt-2 text-xs xl:text-xl text-blue-500 cursor-pointer'>
+                                            <div className='font-medium mt-2 text-xs xl:text-xl text-blue-500 cursor-pointer hover:text-orange-500'>
                                                 {item.productName}
                                             </div>
                                             <div className='max-w-[150px] mb-2 mt-2'>
