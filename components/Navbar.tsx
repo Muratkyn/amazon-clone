@@ -31,7 +31,7 @@ const Navbar = () => {
     <header className='min-w-[1000px]'>
         <div className='flex bg-amazonColors-default text-white h-[60px]'>
             { /* Left */}
-            <div className='flex items-center p- m-4'>
+            <div className='flex items-center p-2 m-4'>
                 <Link href={"/"}>
                     <img className='h-[35px] w-[110px] m-2' src='../images/amazon.png' alt='img'></img>
                 </Link>
@@ -97,7 +97,7 @@ const Navbar = () => {
                 </div>
             </div>
         </div>
-        <div className='flex items-center justify-evenly bg-amazonColors-lightBlue text-white space-x-5 text-xs xl:text-sm p-2 pl-1 gap-1 cursor-pointer md:text-xs lg:text-xs '>
+        <div className='flex items-center justify-evenly bg-amazonColors-lightBlue text-white space-x-5 text-xs xl:text-sm p-1 pl-1 gap-1 cursor-pointer md:text-xs lg:text-xs '>
             <Bars3Icon onClick={() => toggleNavbar()} className='h-[28px]'/>
             {navbarOpen && 
             <div onClick={() => toggleNavbar()}>

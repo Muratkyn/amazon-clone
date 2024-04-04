@@ -26,7 +26,7 @@ const CartItems = () => {
                                             <h1 className='hover:text-orange-500'>{item.productName}</h1> 
                                             <p className=' rounded p-1 items-center text-xs text-black'>({item.options})</p>
                                             </div>
-                                            <div className='grid grid-cols-3 mt-2 mb-2'>
+                                            <div className='grid grid-cols-4 mt-2 mb-2'>
                                                 <div className='text-sm bg-gray-50 border border-solid border-grey shadow-lg rounded pl-3 hover:bg-slate-100 cursor-pointer'
                                                 onClick={()=> dispatch(decrementCart(item.id))}>-</div>
                                                 <div className='text-sm bg-gray-50 border border-solid border-grey shadow-lg pr-1.5 hover:bg-slate-100 rounded cursor-pointer text-right'>{item.quantity}</div>
@@ -39,7 +39,7 @@ const CartItems = () => {
                                         <div className='flex flex-row justify-end font-semibold'>
                                             <h1>{item.price}€</h1>  
                                         </div>
-                                        <button className=' flex self-start justify-end mr-2 font-bold' onClick={() => dispatch(removeFromCart(item.id))}>X</button>
+                                        <button className='flex self-start justify-center mr-2 font-bold col-span-1' onClick={() => dispatch(removeFromCart(item.id))}>X</button>
 
                                 </div>
                             </div>
