@@ -20,7 +20,7 @@ const Checkout = () => {
           <div className='bg-white w-[90%] h-[130px] flex flex-row justify-center items-center gap-20'>
             <Link href={"/product"}><button className='text-sm border border-solid border-grey rounded-lg p-1.5 shadow-lg hover:bg-slate-100'>Scopri di piu</button></Link>
             <div><button className='text-sm'><span className='font-bold'>Metti da parte il budget per i tuoi futuri acquisti </span>Amazon Ricarica</button></div>
-            <div><img src='./images/amazon-cart-image.jpg'></img></div>
+            <div><img src='./images/amazon-cart-image.jpg' alt="img"></img></div>
           </div>
         </div>
           <div className='min-w[1000px] max-w-[1500px] h-auto m-auto pt-8'>

@@ -12,7 +12,7 @@ const ProductPage = () => {
     <div >
       <div className='flex justify-center items-center w-[1500px]'>
         {product.map((product) => (
-          <div className='h-[650px] w-[1200px] bg-white m-3 '>
+          <div key={product.id} className='h-[650px] w-[1200px] bg-white m-3 '>
             <div className='h-[400px] m-4 p-1'>
               <img className='h-[100%] w-[100%]  object-fill cursor-pointer' src={product.img} alt="image" />
               </div>
