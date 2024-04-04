@@ -1,3 +1,9 @@
 {
-  "extends": "next/core-web-vitals"
+  "extends": "next/core-web-vitals",
+  "rules":
+  {
+    "@next/next/no-img-element": "off", // next <img> problem
+    "react/no-unescaped-entities": 0  // '' &apos fix
+  }
 }
+

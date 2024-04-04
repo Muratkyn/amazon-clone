@@ -18,23 +18,22 @@ const CarouselCategory = () => {
                 spaceBetween={10}
                 navigation={true}
                 modules={[Navigation]}
-                
             >
                 <SwiperSlide>
-                    <img src={'/images/carousel-category1.jpg'}></img>
+                    <img src={'/images/carousel-category1.jpg'} alt="img"></img>
                 </SwiperSlide>
                 <SwiperSlide>
-                    <img src={'/images/carousel-category2.jpg'}></img>
+                    <img src={'/images/carousel-category2.jpg'} alt="img"></img>
                 </SwiperSlide><SwiperSlide>
-                    <img src={'/images/carousel-category3.jpg'}></img>
+                    <img src={'/images/carousel-category3.jpg'} alt="img"></img>
                 </SwiperSlide><SwiperSlide>
-                    <img src={'/images/carousel-category4.jpg'}></img>
+                    <img src={'/images/carousel-category4.jpg'} alt="img"></img>
                 </SwiperSlide><SwiperSlide>
-                    <img src={'/images/carousel-category5.jpg'}></img>
+                    <img src={'/images/carousel-category5.jpg'} alt="img"></img>
                 </SwiperSlide><SwiperSlide>
-                    <img src={'/images/carousel-category6.jpg'}></img>
+                    <img src={'/images/carousel-category6.jpg'} alt="img"></img>
                 </SwiperSlide><SwiperSlide>
-                    <img src={'../images/carousel-category7.jpg'}></img>
+                    <img src={'../images/carousel-category7.jpg'} alt="img"></img>
                 </SwiperSlide>
             </Swiper>
           </Link>

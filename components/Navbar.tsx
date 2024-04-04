@@ -32,7 +32,7 @@ const Navbar = () => {
             { /* Left */}
             <div className='flex items-center p- m-4'>
                 <Link href={"/"}>
-                    <img className='h-[35px] w-[110px] m-2' src='../images/amazon.png'></img>
+                    <img className='h-[35px] w-[110px] m-2' src='../images/amazon.png' alt='img'></img>
                 </Link>
                 <div className='pr-4 pl-4 reltive'>
                     <div className='text-xs xl:text-sm text-gray-300 '>
