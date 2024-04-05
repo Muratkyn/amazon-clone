@@ -80,16 +80,15 @@ const Navbar = () => {
                         </div>
                     </Link>
                     {onHover && 
-                       <div className='w-[600px] top-0 left-0  flex flex-column fixed z-50'> 
-                        <div className='fixed z-50 mt-14 '> 
-                          <motion.div initial={{x: -500 }} animate={{x: 1400 }}  transition={{  duration: 0 }} className=' bg-white'>
+                       <div className='w-[600px] top-0 left-0  flex flex-column fixed z-50 '> 
+                        <div className='fixed z-50 mt-14 bg-opacity-60  bg-black w-full h-screen'> 
+                          <motion.div initial={{x: -500 }} animate={{x: 1400 }}  transition={{  duration: .0 }} className=' bg-white '>
                             <div>
                                 <div className=' gap-2 w-full justify-start items-center text-black bg-yellow-400 px-8 py-3 text-lg font-bold border-black border-solid '>
                                     Carrello ( {cart} )                                   
                                 </div>                        
                                 <CartItems />
                             </div>
-   
                           </motion.div>
                         </div>
                         </div>

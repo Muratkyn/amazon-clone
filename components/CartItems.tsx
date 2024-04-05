@@ -39,7 +39,7 @@ const CartItems = () => {
                                         <div className='flex flex-row justify-end font-semibold'>
                                             <h1>{item.price}€</h1>  
                                         </div>
-                                        <button className='flex self-start justify-center mr-2 font-bold col-span-1' onClick={() => dispatch(removeFromCart(item.id))}>X</button>
+                                        <button className='flex self-start justify-end mr-2 font-bold col-span-1' onClick={() => dispatch(removeFromCart(item.id))}>X</button>
 
                                 </div>
                             </div>
