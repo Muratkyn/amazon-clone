@@ -1,0 +1,18 @@
+.search_container {
+   @apply w-[100%] flex items-center h-10 bg-amazonColors-backgroundColor rounded ml-3
+}
+
+.select_field {
+   @apply text-gray-500 border text-xs bg-amazonColors-backgroundColor p-2 rounded-l
+}
+
+.input_field {
+   @apply flex grow items-center rounded h-[100%] w-[100%] p-2 text-black
+}
+.btn {
+    @apply w-[45px] rounded p-1 bg-amazonColors-amazonYellow hover:bg-yellow-500
+}
+
+.mgnfy {
+    @apply h-[32px] text-black mr-1
+}

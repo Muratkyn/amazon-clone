@@ -1,11 +1,12 @@
 import React from 'react'
 import { MagnifyingGlassIcon } from '@heroicons/react/24/outline'
 import Link from 'next/link'
+import "./Search.css"
 
 const Search = () => {
   return (
-    <div className='w-[100%] flex items-center h-10 bg-amazonColors-backgroundColor rounded ml-3'>
-        <select className='text-slate-900 border text-xs text-bold bg-amazonColors-backgroundColor p-2 rounded-l'>
+    <div className='search_container'>
+        <select className='select_field'>
             <option>Tutte le Categorie</option>
             <option>Alexa Skill</option>
             <option>Alimentari e cura</option>
@@ -13,10 +14,10 @@ const Search = () => {
             <option>Bellezza</option>
             <option>Casa e cusina</option>
         </select>
-      <input className='flex grow item-center rounded h-[100%] w-[100%] p-2 text-black text-bold' placeholder='Ricerca Amazon.it' type='text'></input>
-      <button className='w-[45px] rounded p-1 bg-amazonColors-amazonYellow hover:bg-yellow-500'>
+      <input className='input_field' placeholder='Ricerca Amazon.it' type='text'></input>
+      <button className='btn'>
         <Link href={"/product"}>
-        <MagnifyingGlassIcon className='h-[32px] text-black mr-1'/>
+        <MagnifyingGlassIcon className='mgnfy'/>
         </Link>
       </button>
     </div>

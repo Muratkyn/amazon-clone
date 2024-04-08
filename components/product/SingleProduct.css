@@ -1,0 +1,36 @@
+
+.container {
+    @apply flex justify-center items-center w-[1500px]
+}
+
+.products {
+    @apply h-[650px] w-[1200px] bg-white m-3 
+}
+
+.img_container {
+    @apply h-[400px] m-4 p-1
+}
+
+.img {
+    @apply h-[100%] w-[100%]  object-fill cursor-pointer
+}
+
+.product_name {
+    @apply text-xs xl:text-xl text-blue-500 ml-4 hover:text-orange-500 cursor-pointer
+}
+
+.product_price {
+    @apply m-4 font-bold
+}
+
+.product_options {
+    @apply text-xs text-blue-400 mr-4
+}
+
+.btn_container {
+    @apply flex justify-center items-center mt-5
+}
+
+.btn_add {
+    @apply bg-yellow-300 p-2 rounded-xl w-[70%] hover:bg-yellow-400
+}

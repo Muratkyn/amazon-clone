@@ -1,0 +1,24 @@
+
+.text {
+    @apply text-sm
+}
+
+h1 {
+    @apply font-bold
+}
+
+.div_container {
+    @apply flex mb-4
+}
+
+.div_checkbox {
+    @apply flex items-center
+}
+
+.highlight {
+    @apply font-bold text-sm mt-2
+}
+
+.prices {
+    @apply text-sm gap-2 flex flex-col justify-center m-1 cursor-pointer
+}

@@ -61,7 +61,7 @@ const CartItems = () => {
         }
         {
          itemsNumber > 0 &&
-            <div className='text-black text-md flex flex-row justify-center p-8 ml-16 '>Totale provissorio ({itemsNumber}): 
+            <div className='text-black text-md flex flex-row justify-center p-8 ml-16'>Totale provissorio ({itemsNumber}): 
                 <span className='font-semibold'>{subtotal}€</span>
             </div>
         }
