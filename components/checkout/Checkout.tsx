@@ -4,6 +4,8 @@ import { useDispatch, useSelector } from 'react-redux'
 import { Rootstate } from '@/redux/store'
 import Link from 'next/link'
 import { removeFromCart, incrementCart, decrementCart } from '@/redux/CartSlice'
+import "./Checkout.css"
+
 
 const Checkout = () => {
     const items = useSelector((state:Rootstate) => state.cart.products)
@@ -64,12 +66,12 @@ const Checkout = () => {
                                                 onClick={()=> dispatch(incrementCart(item.id))}>+</div>                                                                                            
                                             </div>
                                             <div className='mt-4 gap-2 flex'>
-                                                <button className='text-xs border border-solid border-grey rounded-lg p-1.5 shadow-lg hover:bg-slate-100' 
+                                                <button className='btn_checkout' 
                                                 onClick={() => dispatch(removeFromCart(item.id))}>Rimuovi</button>  
-                                                <button className='text-xs border border-solid border-grey rounded-lg p-1.5 shadow-lg hover:bg-slate-100'>Salva per Dopo</button>                                      
-                                                <button className='text-xs border border-solid border-grey rounded-lg p-1.5 shadow-lg hover:bg-slate-100'>Condividi</button>                                      
+                                                <button className='btn_checkout'>Salva per Dopo</button>                                      
+                                                <button className='btn_checkout'>Condividi</button>                                      
                                             <Link href={"/product"}>
-                                                <button className='text-xs border border-solid border-grey rounded-lg p-1.5 shadow-lg hover:bg-slate-100'>Visualiiza gli altri articoli simili</button>                                      
+                                                <button className='btn_checkout'>Visualiiza gli altri articoli simili</button>                                      
                                             </Link>
                                             </div>
                                         </div>
@@ -124,3 +126,6 @@ const Checkout = () => {
 }
 
 export default Checkout
+
+
+// OPTIMIZE THE TERN OPS

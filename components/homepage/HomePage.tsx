@@ -2,7 +2,7 @@
 import React from 'react'
 import Carousel from './Carousel'
 //us
-import Cards from './Cards'
+import Cards from './Card'
 import CarouselCategory from './CarouselCategory'
 import CarouselProducts from './CarouselProducts'
 

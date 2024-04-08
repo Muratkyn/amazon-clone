@@ -2,3 +2,21 @@
 @tailwind components;
 @tailwind utilities;
 
+.size_full {
+    width: full;
+    height: screen;
+}
+
+.inherit_bg {
+    background-color: white;
+}
+
+.icon_size {
+    width: 35px;
+    height: 50px;
+}
+
+.text_bold {
+    font-size: large;
+    font: bold;
+}

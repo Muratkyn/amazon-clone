@@ -39,7 +39,7 @@ const CartItems = () => {
                                         <div className='flex flex-row justify-end font-semibold'>
                                             <h1>{item.price}€</h1>  
                                         </div>
-                                        <button className='flex self-start justify-center mr-2 font-bold col-span-1' onClick={() => dispatch(removeFromCart(item.id))}>X</button>
+                                        <button className='flex self-start justify-end mr-2 font-bold col-span-1' onClick={() => dispatch(removeFromCart(item.id))}>X</button>
 
                                 </div>
                             </div>
@@ -61,7 +61,7 @@ const CartItems = () => {
         }
         {
          itemsNumber > 0 &&
-            <div className='text-black text-md flex flex-row justify-center p-8 ml-16 '>Totale provissorio ({itemsNumber}): 
+            <div className='text-black text-md flex flex-row justify-center p-8 ml-16'>Totale provissorio ({itemsNumber}): 
                 <span className='font-semibold'>{subtotal}€</span>
             </div>
         }

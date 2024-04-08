@@ -42,6 +42,8 @@ export const cartSlice = createSlice ({
           );
           state.products.splice(index, 1);
           console.log(action.payload)
+
+          // FILTERING THE ALL ELS THAT WOULDN MATCH THE ID, REFACTOR ALL AVOID MUTATION, PURE FUNCS
         },
         incrementCart: (state, action: PayloadAction< Product>) => {
           const itemInc = state.products.find((item) => item.id === action.payload);
