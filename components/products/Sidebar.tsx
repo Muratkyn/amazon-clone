@@ -1,5 +1,7 @@
+"use client"
+
 import React from 'react'
-import Rate from '../Rate'
+import Rate from '../rate/Rate'
 import "./Sidebar.css"
 
 const Sidebar = () => {

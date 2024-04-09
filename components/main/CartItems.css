@@ -1,0 +1,60 @@
+.cart_items_div {
+    @apply grid grid-cols-4 items-center p-2 ml-4 text-black  border-y-2
+}
+
+.cart_items_img {
+    @apply p-4 w-[100px]
+}
+
+.cart_items_list {
+    @apply content-start w-[100px]
+}
+
+.cart_items_text {
+    @apply text-blue-500 w-[150px]
+}
+
+.cart_items_name {
+    @apply hover:text-orange-500
+}
+
+.cart_items_option {
+    @apply  rounded p-1 items-center text-xs text-black
+}
+.cart_items_btns {
+    @apply grid grid-cols-4 mt-2 mb-2
+}
+
+.cart_items_btn {
+    @apply text-sm bg-gray-50 border border-solid 
+    border-gray-200 shadow-lg rounded cursor-pointer
+    hover:bg-slate-100 pl-2
+}
+
+.cart_items_price_div {
+    @apply flex flex-row justify-end font-semibold
+}
+
+.cart_items_btn_remove {
+    @apply flex self-start justify-end mr-2 font-bold col-span-1
+}
+
+.cart_items_empty_img {
+    @apply w-[200px] h-[200px] p-10
+}
+
+.cart_items_empty_text {
+    @apply text-sm font-semibold text-cyan-700 mb-4
+}
+
+.cart_items_empty_btn {
+    @apply bg-white shadow-lg border p-1.5 mr-2 rounded-lg text-sm hover:bg-gray-100 cursor-pointer text-black
+}
+
+.cart_items_total {
+    @apply text-black text-base flex flex-row justify-center p-4 ml-8 h-auto
+}
+
+.cart_items_subtotal {
+    @apply font-semibold
+}

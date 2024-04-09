@@ -5,15 +5,14 @@ import { Rootstate } from '@/redux/store'
 import Link from 'next/link'
 import { removeFromCart, incrementCart, decrementCart } from '@/redux/CartSlice'
 import "./Checkout.css"
-
+import CheckoutEmpty from './CheckoutEmpty'
+import CheckoutItems from './CheckoutFull'
 
 const Checkout = () => {
-    const items = useSelector((state:Rootstate) => state.cart.products)
     const itemsNumber = useSelector((state:Rootstate) => state.cart.productsNumber)
     const subtotal = useSelector((state:Rootstate) => state.cart.products.reduce((subtotal, product) => 
     subtotal + (product.price * product.quantity), 0
     ))
-    const dispatch = useDispatch()
     
   return (
     <div>
@@ -25,86 +24,27 @@ const Checkout = () => {
             <div><img src='./images/amazon-cart-image.jpg' alt="img"></img></div>
           </div>
         </div>
-          <div className='min-w[1000px] max-w-[1500px] h-auto m-auto pt-8'>
+          <div className='min-w-[50%] max-w-[80%] h-auto m-auto pt-8'>
               <div className='grid grid-cols-8 gap-10 mb-12'>
                 {/* Products */}
                   <div className='col-span-6 bg-white'>
-                      {
-                        itemsNumber > 0 ?
-                        <div>
-                            <div className='text-2xl xl:text-3xl mt-4 pl-10'>Carrello</div>
-                            <div className='flex flex-col items-end mr-8'>
-                              <p>prezzo</p>
-                            </div>
-                        </div>
-                        : <span></span>
-                      }
-                      {itemsNumber > 0 ?          
-                        items.map((item) => {
-                          return (
-                            <div key={item.id}>
-                                <div className='grid grid-cols-12 divide-y divide-gray-400'>
-                                    <div className='col-span-10 grid grid-cols-8 divide-y divide-gray-400'>
-                                        <div className='col-span-2'> 
-                                            <img className='p-16' src={item.img} alt="small" />
-                                        </div>
-                                        <div className='col-span-6 p-10 '> 
-                                            <div className='font-medium mt-2 text-xs xl:text-xl text-blue-500 cursor-pointer hover:text-orange-500'>
-                                                {item.productName}
-                                            </div>
-                                            <div className='max-w-[150px] mb-2 mt-2'>
-                                              <p className='text-sm mr-3'>({item.options})</p>
-                                              <div className='flex mt-2'>
-                                              <p className='bg-yellow-300 max-w[20px] rounded p-1 items-center font-semibold text-sm'>✅ Amazon's choice</p>
-                                              </div>
-                                            </div>
-                                            <div className='grid grid-cols-3 w-[100px]'>
-                                                <div className='text-sm xl:text-xl bg-white border border-solid border-grey shadow-lg rounded pl-3 hover:bg-slate-100 cursor-pointer'
-                                                onClick={()=> dispatch(decrementCart(item.id))}>-</div>
-                                                <div className='text-sm xl:text-xl bg-white border border-solid border-grey shadow-lg pr-1.5 hover:bg-slate-100 rounded cursor-pointer text-right'>{item.quantity}</div>
-                                                <div className='text-sm xl:text-xl bg-white border border-solid border-grey shadow-lg rounded pl-2 hover:bg-slate-100 cursor-pointer'
-                                                onClick={()=> dispatch(incrementCart(item.id))}>+</div>                                                                                            
-                                            </div>
-                                            <div className='mt-4 gap-2 flex'>
-                                                <button className='btn_checkout' 
-                                                onClick={() => dispatch(removeFromCart(item.id))}>Rimuovi</button>  
-                                                <button className='btn_checkout'>Salva per Dopo</button>                                      
-                                                <button className='btn_checkout'>Condividi</button>                                      
-                                            <Link href={"/product"}>
-                                                <button className='btn_checkout'>Visualiiza gli altri articoli simili</button>                                      
-                                            </Link>
-                                            </div>
-                                        </div>
-                                    </div>
-                                    <div className='col-span-2 p-10 flex flex-row justify-end'> 
-                                        <div className='text-lg xl:text-xl mt-2 font-bold '>{item.price}€</div>
-                                    </div>
-                                </div>
-                            </div>
-                          )
-                        }): 
-                        <div>
-                          <div className='w-auto h-auto flex flex-row'>
-                            <div>
-                              <img className='w-[500px] h-[300px] p-10' src="./images/empty-cart_.svg" alt="empty_cart" />
-                            </div>
-                            <div className='p-6 mt-6'>
-                              <p className='text-md md:text-2xl '>Il tuo carrello Amazon è vuoto</p>
-                              <Link href={"/product"}>
-                                <p className='text-xs font-semibold text-cyan-700 mb-4'>Acquista le offerte di oggi</p>
-                              </Link>
-                              <button className='bg-yellow-400 p-1.5 mr-2 rounded-lg text-sm shadow-lg hover:bg-yellow-500 cursor-pointer'>Accedi al tuo account.</button>
-                              <button className='bg-white shadow-lg border p-1.5 mr-2 rounded-lg text-sm hover:bg-gray-100 cursor-pointer'>Iscriviti ora</button>
-                            </div>
-                          </div>
-                        </div>
+                        
+                      {itemsNumber > 0 ?  
+                       <div>
+                       <div className='text-2xl xl:text-3xl mt-4 pl-10'>Carrello</div>
+                       <div className='flex flex-col items-end mr-8'>
+                         <p>prezzo</p>
+                       </div>
+                       <CheckoutItems /> 
+                      </div>       
+                       :
+                       <CheckoutEmpty />
                       }
                       {
-                        itemsNumber > 0 ?
+                        itemsNumber > 0 &&
                       <div className='text-lg xl:text-xl text-right mb-2 mr-10 '>Totale provissorio ({itemsNumber}): <span 
                       className='font-semibold'>{subtotal}€</span>
                       </div>
-                        : <div></div>
                       }
                   </div>
                 <div className='col-span bg-white rounded h-[280px] w-[300px] p-10'>

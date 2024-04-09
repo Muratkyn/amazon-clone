@@ -1,0 +1,7 @@
+.carousel_cat_div {
+    @apply bg-white max-w-[1480px] m-auto p-5
+}
+
+.carousel_cat_swiper {
+    @apply text-2xl font-semibold m-auto
+}

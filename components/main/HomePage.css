@@ -1,0 +1,11 @@
+.homePage_div {
+    @apply bg-amazonColors-backgroundColor
+}
+
+.homePage_carousel {
+    @apply m-auto min-w-[1000px] max-w-[1500px]
+}
+
+.homePage_card {
+    @apply grid grid-cols-3 xl:grid-cols-4 -mt-60
+}

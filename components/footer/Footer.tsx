@@ -1,17 +1,19 @@
 import React from 'react'
+import "./Footer.css"
 
 const Footer = () => {
   return (
-    <div className="w-full md:w-full h-20 bg-amazonColors-lightBlue text-gray-300 flex items-center justify-center gap-4">
-      <img className="w-24" src='../images/amazon.png' alt="logo" />
-      <p className="text-sm -mt-4">
+    <div className="footer_div">
+      <img className="w-24" 
+       src='../images/amazon.png' 
+       alt="logo" />
+      <p className="footer_text">
         All rights reserved{" "}
         <a
-          className="hover:text-white hover:underline decoration-[1px] cursor-pointer duration-300"
+          className="footer_link"
           href="/"
           target="_blank"
-        >
-          @amazon.it
+        > @amazon.it
         </a>
       </p>
     </div>

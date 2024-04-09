@@ -1,0 +1,11 @@
+.footer_div {
+    @apply w-full md:w-full h-20 bg-amazonColors-lightBlue text-gray-300 flex items-center justify-center gap-4
+}
+
+.footer_text {
+    @apply text-sm -mt-4
+}
+
+.footer_link {
+    @apply hover:text-white hover:underline decoration-[1px] cursor-pointer 
+}

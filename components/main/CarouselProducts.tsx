@@ -1,15 +1,17 @@
 "use client"
+
 import React from 'react'
 import { Swiper, SwiperSlide } from 'swiper/react'
 import { Navigation } from 'swiper/modules';
 import Link from 'next/link';
 import "swiper/css/navigation";
 import "swiper/css";
+import "./CarouselProducts.css"
 
 const CarouselProducts = () => {
   return (
-    <div className='bg-white m-3 p-5 w-auto'>
-        <div className='text-2xl font-semibold p-3'>Best sellers
+    <div className='carousel_prod_div'>
+        <div className='carousel_div_swiper'>Best sellers
         <Swiper
             slidesPerView={6}
             spaceBetween={10}

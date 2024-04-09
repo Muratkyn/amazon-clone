@@ -1,5 +1,6 @@
 import React from 'react'
 import Link from 'next/link'
+import "./Card.css"
 
 interface Props {
   title: string,
@@ -9,15 +10,15 @@ interface Props {
 
 const Cards = ({title, img, link}: Props) => {
   return (
-    <div className='h-[420px] bg-white m-3 '>
+    <div className='card_div'>
       <Link href={"/product"}>
-        <div className='text-lg xl:text-xl font-semibold ml-4 mt-4'>
+        <div className='card_title'>
           {title}
         </div>
-        <div className='h-[300px] m-4'>
-          <img className='h-[100%] w-[100%] object-cover cursor-pointer' src={img} alt="" />
+        <div className='card_img_div'>
+          <img className='card_img' src={img} alt="img" />
           </div>
-        <div className='text-xs xl:text-sm text-blue-500 ml-4 hover:text-orange-500 cursor-pointer'>
+        <div className='card_link'>
           {link}
         </div>
       </Link>
