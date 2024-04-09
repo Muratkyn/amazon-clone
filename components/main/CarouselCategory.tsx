@@ -6,11 +6,12 @@ import { Navigation } from 'swiper/modules';
 import Link from 'next/link';
 import "swiper/css/navigation";
 import "swiper/css";
+import "./CarouselCategory.css"
 
 const CarouselCategory = () => {
   return (
-    <div className='bg-white max-w-[1480px] m-auto p-5'>
-        <div className="text-2xl font-semibold m-auto" >Festa delle Offerte di Primavera per categoria</div>
+    <div className='carousel_cat_div'>
+        <div className="carousel_cat_swiper" >Festa delle Offerte di Primavera per categoria</div>
           <Link href={"/product"}>
             <Swiper
                 slidesPerView={6}

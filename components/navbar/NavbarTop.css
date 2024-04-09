@@ -63,6 +63,10 @@
     @apply fixed z-50 mt-14 bg-opacity-60  bg-black w-full h-screen
 }
 
+.navbar_cart_wrapper {
+    @apply bg-white w-[520px]
+}
+
 .navbar_cart_hover {
-    @apply gap-2 w-full justify-start items-center text-black bg-yellow-400 px-8 py-3 text-lg font-bold border-black border-solid
+    @apply gap-2 w-[520px] justify-start items-center text-black bg-yellow-400 px-8 py-3 text-lg font-bold border-black border-solid
 }

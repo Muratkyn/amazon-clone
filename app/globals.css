@@ -20,3 +20,11 @@
     font-size: large;
     font: bold;
 }
+
+.cart_items_checkout {
+    width: auto;
+    height: auto;
+    display:flex;
+    flex-direction: row;
+}
+

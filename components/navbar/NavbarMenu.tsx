@@ -1,3 +1,5 @@
+"use client"
+
 import { Bars3Icon, UserCircleIcon, XMarkIcon } from '@heroicons/react/16/solid'
 import { motion } from 'framer-motion'
 import Link from 'next/link'

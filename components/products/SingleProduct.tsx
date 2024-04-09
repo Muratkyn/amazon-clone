@@ -1,8 +1,10 @@
+"use client"
+
 import React, {useState} from 'react'
 import { addToCart } from '@/redux/CartSlice'
 import { useDispatch } from 'react-redux'
 import { PRODUCTS } from '@/Products'
-import Rate from '../Rate'
+import Rate from '../rate/Rate'
 import "./SingleProduct.css"
 
 const SingleProduct = () => {

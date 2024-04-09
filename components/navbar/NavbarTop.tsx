@@ -1,10 +1,12 @@
+"use client"
+
 import React, {useState} from 'react'
 import Link from 'next/link'
 import { MapPinIcon } from '@heroicons/react/16/solid'
 import { ShoppingCartIcon } from "@heroicons/react/24/outline"
 import Search from '../search/Search'
 import { motion } from 'framer-motion'
-import CartItems from '../homepage/CartItems'
+import CartItems from '../main/CartItems'
 import { useSelector } from 'react-redux'
 import { Rootstate } from '@/redux/store'
 import "./NavbarTop.css"
@@ -72,7 +74,8 @@ const NavbarTop = () => {
                     {onHover && 
                        <div className='navbar_cart_container'> 
                             <div className='navbar_cart_div'> 
-                            <motion.div initial={{x: -500 }} animate={{x: 1400 }}  transition={{  duration: .0 }} className='inherit_bg'>
+                            <motion.div initial={{x: -500 }} animate={{x: 1400 }}  transition={{  duration: .0 }} 
+                             className='navbar_cart_wrapper'>
                                 <div>
                                     <div className='navbar_cart_hover'>
                                         Carrello ( {cart} )                                   

@@ -1,0 +1,7 @@
+.carousel_prod_div {
+    @apply bg-white m-3 p-5 w-auto
+}
+
+.carousel_div_swiper {
+    @apply text-2xl font-semibold p-3
+}

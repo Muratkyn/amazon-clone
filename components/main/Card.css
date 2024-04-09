@@ -1,0 +1,19 @@
+.card_div {
+    @apply h-[420px] bg-white m-3 
+}
+
+.card_title {
+    @apply text-lg xl:text-xl font-semibold ml-4 mt-4
+}
+
+.card_img_div {
+    @apply h-[300px] m-4
+}
+
+.card_img {
+    @apply h-[100%] w-[100%] object-cover cursor-pointer
+}
+
+.card_link {
+    @apply text-xs xl:text-sm text-blue-500 ml-4 hover:text-orange-500 cursor-pointer
+}
