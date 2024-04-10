@@ -1,0 +1,20 @@
+.navbarMenuOpen_container {
+    @apply w-full h-screen top-0 left-0 text-black 
+    bg-opacity-80 bg-black flex flex-col fixed z-50
+}
+
+.navbarMenuOpen_div {
+    @apply w-[380px] h-full
+}
+
+.navbarMenuOpen_icon_div {
+    @apply flex gap-2 w-full justify-start items-center text-white bg-amazonColors-lightBlue px-8 py-0.5 text-lg font-bold 
+}
+
+.navbarMenuOpen_icon_x {
+    @apply w-[10px] flex flex-col justify-end ml-36
+}
+
+.navbarMenuOpen_groups {
+    @apply p-6 gap-6 flex flex-col border border-solid 
+}

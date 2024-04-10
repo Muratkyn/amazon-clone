@@ -3,7 +3,7 @@
   "rules":
   {
     "@next/next/no-img-element": "off", // next <img> problem
-    "react/no-unescaped-entities": 0  // '' &apos fix
+    "react/no-unescaped-entities": 0    // '' &apos fix
   }
 }
 

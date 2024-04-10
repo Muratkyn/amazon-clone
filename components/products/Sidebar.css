@@ -1,5 +1,5 @@
 
-.text {
+.sidebar_container {
     @apply text-sm
 }
 
@@ -7,18 +7,23 @@ h1 {
     @apply font-bold
 }
 
-.div_container {
+.sidebar_input{
     @apply flex mb-4
 }
 
-.div_checkbox {
+.sidebar_checkbox {
     @apply flex items-center
 }
 
-.highlight {
+.sidebar_text {
     @apply font-bold text-sm mt-2
 }
 
-.prices {
-    @apply text-sm gap-2 flex flex-col justify-center m-1 cursor-pointer
+.sidebar_checkbox_container {
+    @apply mb-4 flex flex-col
+}
+
+.sidebar_prices {
+    @apply text-sm gap-2 flex flex-col 
+    justify-center m-1 cursor-pointer
 }

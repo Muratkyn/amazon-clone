@@ -5,27 +5,6 @@
      md:text-xs lg:text-xs p-1
 }
 
-.navbarMenu_open_container {
-    @apply w-full h-screen top-0 left-0 text-black 
-    bg-opacity-80 bg-black flex flex-col fixed z-50
-}
-
-.navbarMenu_open_div {
-    @apply w-[380px] h-full
-}
-
-.navbarMenu_icon_div {
-    @apply flex gap-2 w-full justify-start items-center text-white bg-amazonColors-lightBlue px-8 py-0.5 text-lg font-bold 
-}
-
-.navbarMenu_icon_x {
-    @apply w-[10px] flex flex-col justify-end ml-36
-}
-
-.navbarMenu_groups {
-    @apply p-6 gap-6 flex flex-col border border-solid 
-}
-
 .navbarMenu_promo {
     @apply flex items-center justify-end text-xs
 }

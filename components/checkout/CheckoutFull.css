@@ -1,0 +1,50 @@
+.checkout_full_container {
+    @apply grid grid-cols-12 divide-y divide-gray-400
+}
+
+.checkout_full_div {
+    @apply col-span-10 grid grid-cols-8 divide-y divide-gray-400
+}
+
+.checkout_full_img {
+    @apply col-span-2
+}
+
+.checkout_full_product_div {
+    @apply col-span-6 p-10
+}
+
+.checkout_full_productNAme {
+    @apply font-medium mt-2 text-xs xl:text-xl
+     text-blue-500 cursor-pointer hover:text-orange-500
+}
+
+.checkout_full_options {
+    @apply max-w-[150px] mb-2 mt-2
+}
+
+.checkout_full_option {
+    @apply bg-yellow-300 max-w-[200px] rounded p-1 
+    items-center font-semibold text-sm
+}
+
+.checkout_full_btn_div {
+    @apply grid grid-cols-3 w-[100px]
+}
+
+.checkout_full_btn {
+    @apply text-sm xl:text-xl bg-white border border-solid 
+    border-gray-200 shadow-lg rounded pl-3 hover:bg-slate-100 cursor-pointer
+}
+
+.checkout_full_sub_btns {
+    @apply mt-4 gap-2 flex
+}
+
+.checkout_full_price_div {
+    @apply col-span-2 p-10 flex flex-row justify-end
+}
+
+.checkout_full_price {
+    @apply text-lg xl:text-xl mt-2 font-bold
+}

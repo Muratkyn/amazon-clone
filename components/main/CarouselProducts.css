@@ -2,6 +2,6 @@
     @apply bg-white m-3 p-5 w-auto
 }
 
-.carousel_div_swiper {
+.carousel_prod_swiper {
     @apply text-2xl font-semibold p-3
 }
