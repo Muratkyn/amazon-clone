@@ -16,8 +16,10 @@ const Cards = ({title, img, link}: Props) => {
           {title}
         </div>
         <div className='card_img_div'>
-          <img className='card_img' src={img} alt="img" />
-          </div>
+          <img className='card_img' 
+           src={img} 
+           alt="img" />
+        </div>
         <div className='card_link'>
           {link}
         </div>

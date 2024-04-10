@@ -4,49 +4,49 @@ import React from 'react'
 import Rate from '../rate/Rate'
 import "./Sidebar.css"
 
-const Sidebar = () => {
+const Sidebar = () => {   
   return (
-    <div className='text'>
+    <div className='sidebar_container'>
     <h1>Idoneo all spedizione gratuita</h1>
-        <div className='div_container '>
+        <div className='sidebar_input '>
             <input type="checkbox" className='m-1' />
             <p className='text'>Spedizione gratuita con Amazon  </p>
         </div>
     <h1>Prodotti piu sostenibili</h1>
-        <div className='div_container'>
+        <div className='sidebar_input'>
             <input type="checkbox" className='m-1' />
             <p className='text'>Climate Pedge friendly</p>
         </div>
     <p>Recensione del Cliente</p>   
-    <p className='highlight'>Marca</p>
-        <div className='mb-4 flex flex-col'>
-            <div className='div_checkbox'>
+    <p className='sidebar_text'>Marca</p>
+        <div className='sidebar_checkbox_container'>
+            <div className='sidebar_checkbox'>
                 <input type="checkbox" className='m-1' />
-                <p className='text'>HP</p>
+                <p>HP</p>
             </div>
-            <div className='div_checkbox'>
+            <div className='sidebar_checkbox'>
                 <input type="checkbox" className='m-1' />
-                <p className='text'>Apple</p>
+                <p>Apple</p>
             </div>
-            <div className='div_checkbox'>
+            <div className='sidebar_checkbox'>
                 <input type="checkbox" className='m-1' />
-                <p className='text'>Logitech</p>
+                <p>Logitech</p>
             </div>
-            <div className='div_checkbox'>
+            <div className='sidebar_checkbox'>
                 <input type="checkbox" className='m-1' />
-                <p className='text'>Samsung</p>
-            </div><div className='div_checkbox'>
+                <p>Samsung</p>
+            </div><div className='sidebar_checkbox'>
                 <input type="checkbox" className='m-1' />
-                <p className='text'>Lenovo</p>
+                <p>Lenovo</p>
             </div>
         </div>
-        <div className='highlight'>Media recensioni clienti</div>
+        <div className='sidebar_text'>Media recensioni clienti</div>
         <Rate />
         <Rate />
         <Rate />
   <div>
     <h1>Prezzo</h1>
-    <div className='prices'>
+    <div className='sidebar_prices'>
         <p>Fino a 5 EUR</p>
         <p>5 a 10 EUR</p>
         <p>10 a 20 EUR</p>

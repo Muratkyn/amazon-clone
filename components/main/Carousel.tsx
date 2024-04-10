@@ -1,9 +1,9 @@
 "use client";
 
 import React from 'react'
+import Link from 'next/link';
 import { Swiper, SwiperSlide } from 'swiper/react'
 import { Navigation, Autoplay } from 'swiper/modules';
-import Link from 'next/link';
 import "swiper/css/navigation";
 import "swiper/css";
 import "./Carousel.css"

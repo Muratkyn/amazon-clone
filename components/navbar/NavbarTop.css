@@ -2,7 +2,7 @@
     @apply flex bg-amazonColors-default text-white h-[60px]
 }
 
-.nav_container {
+.navbarTop_container {
     @apply flex items-center p-2 m-4
 }
 

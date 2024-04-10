@@ -38,28 +38,3 @@ const SingleProduct = () => {
 }
 
 export default SingleProduct
-
-
-/* SSR using the file system
-
-export async function getServerSideProps () {
-  const file = await fs.readFile(process.cwd() + '../app/data.json', 'utf8' );
-  const data = JSON.parse(file)
-  console.log(data)
-
-  return {
-    props : {
-      data, 
-    }
-  }
-
-} 
-
-export async function getServerSideProps () {
-  const res = await fetch("https://api.openbrewerydb.org/v1/breweries")
-  const data = res.json();
-}
-
-
-
-*/
