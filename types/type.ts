@@ -6,3 +6,14 @@ export interface ProductProps {
     options: string,
     quantity: string    
 }
+
+export interface Props {
+    title: string,
+    img: string,
+    link: string
+  } 
+
+  export interface NavbarProp {
+    toggleNavbar: () => void,
+}
+

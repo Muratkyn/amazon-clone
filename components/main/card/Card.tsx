@@ -1,12 +1,7 @@
 import React from 'react'
 import Link from 'next/link'
 import "./Card.css"
-
-interface Props {
-  title: string,
-  img: string,
-  link: string
-} 
+import { Props } from '@/types/type'
 
 const Cards = ({title, img, link}: Props) => {
   return (

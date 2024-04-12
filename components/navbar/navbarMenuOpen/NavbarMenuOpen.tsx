@@ -2,10 +2,7 @@ import React from 'react'
 import { motion } from 'framer-motion'
 import { UserCircleIcon, XMarkIcon } from '@heroicons/react/16/solid'
 import "./NavbarMenuOpen.css"
-
-interface NavbarProp {
-    toggleNavbar: () => void,
-}
+import { NavbarProp } from '@/types/type'
 
 const NavbarMenuOpen = ({toggleNavbar}: NavbarProp) => {
   return (
