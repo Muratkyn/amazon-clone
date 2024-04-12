@@ -3,7 +3,7 @@
 import React, { useState  } from 'react'
 import "./NavbarMenu.css"
 import Link from 'next/link'
-import NavbarMenuOpen from '../NavbarMenuOpen'
+import NavbarMenuOpen from '../navbarMenuOpen/NavbarMenuOpen'
 import { Bars3Icon } from '@heroicons/react/16/solid'
 
 const NavbarMenu = () => {                                   

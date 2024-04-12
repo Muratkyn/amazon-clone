@@ -3,8 +3,8 @@
 import React from 'react'
 import { useSelector } from 'react-redux'
 import { Rootstate } from '@/redux/store'
-import CheckoutEmpty from './CheckoutEmpty'
-import CheckoutFull from './CheckoutFull'
+import CheckoutEmpty from '../checkoutEmpty/CheckoutEmpty'
+import CheckoutFull from '../checkoutFull/CheckoutFull'
 import Link from 'next/link'
 import "./Checkout.css"
 
