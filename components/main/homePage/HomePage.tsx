@@ -1,11 +1,11 @@
 "use client"
 
 import React from 'react'
-import Card from './Card'
-import Carousel from './Carousel'
-import cardsData from "../../CardsData"
-import CarouselCategory from './CarouselCategory'
-import CarouselProducts from './CarouselProducts'
+import Card from '../card/Card'
+import Carousel from '../carousel/Carousel'
+import cardsData from "../../../CardsData"
+import CarouselCategory from '../carouselCategory/CarouselCategory'
+import CarouselProducts from '../carouselProducts/CarouselProducts'
 import "./HomePage.css"
 
 const HomePage = () => {
