@@ -2,11 +2,11 @@
 
 import React, {useState} from 'react'
 import Link from 'next/link'
-import Search from '../search/Search'
+import Search from '../../search/Search'
 import { motion } from 'framer-motion'
 import { MapPinIcon } from '@heroicons/react/16/solid'
 import { ShoppingCartIcon } from "@heroicons/react/24/outline"
-import CartItems from '../main/CartItems'
+import CartItems from '../../main/cartItems/CartItems'
 import { useSelector } from 'react-redux'
 import { Rootstate } from '@/redux/store'
 import "./NavbarTop.css"

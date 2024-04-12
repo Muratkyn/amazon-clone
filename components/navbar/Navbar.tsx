@@ -1,8 +1,8 @@
 "use client"
 
 import React from 'react'
-import NavbarTop from './NavbarTop'
-import NavbarMenu from './NavbarMenu'
+import NavbarTop from './navbarTop/NavbarTop'
+import NavbarMenu from './navbarMenu/NavbarMenu'
 
 const Navbar = () => {
 
