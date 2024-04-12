@@ -10,8 +10,8 @@ import "./CarouselCategory.css"
 
 const CarouselCategory = () => {
   return (
-    <div className='carousel_cat_div'>
-      <div className="carousel_cat_swiper" >
+    <div className='carousel__cat--div'>
+      <div className="carousel__cat--swiper" >
         Festa delle Offerte di Primavera per categoria
       </div>
         <Link href={"/product"}>

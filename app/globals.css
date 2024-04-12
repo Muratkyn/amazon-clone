@@ -2,26 +2,26 @@
 @tailwind components;
 @tailwind utilities;
 
-.size_full {
+.size__full {
     width: full;
     height: screen;
 }
 
-.inherit_bg {
+.inherit__bg {
     background-color: white;
 }
 
-.icon_size {
+.icon__size {
     width: 35px;
     height: 50px;
 }
 
-.text_bold {
+.text__bold {
     font-size: large;
     font-weight: 700;
 }
 
-.cart_items_checkout {
+.cart__items--checkout {
     width: auto;
     height: auto;
     display:flex;

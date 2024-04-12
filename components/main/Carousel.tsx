@@ -10,12 +10,12 @@ import "./Carousel.css"
 
 const Carousel = () => {
   return (
-    <div className='carousel_div'>
+    <div className='carousel__div'>
         <Link href={"/product"}  >
             <Swiper
                 loop={true}
                 spaceBetween={0}
-                className="carousel_swiper"
+                className="carousel__swiper"
                 modules={[Navigation, Autoplay]}
                 navigation= {true}
                 autoplay={{
@@ -38,7 +38,7 @@ const Carousel = () => {
                 </SwiperSlide>
             </Swiper>
         </Link>
-        <div className="carousel_shade" />
+        <div className="carousel__shade" />
     </div>
   )
 }

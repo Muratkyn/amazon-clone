@@ -10,10 +10,10 @@ import "./HomePage.css"
 
 const HomePage = () => {
   return (
-    <div className="homePage_div" >
-      <div className="homePage_carousel"> 
+    <div className="homePage__div" >
+      <div className="homePage__carousel"> 
         <Carousel />
-        <div className='homePage_card'>
+        <div className='homePage__card'>
           {cardsData.map((card, idx) => (
           <Card 
             key={idx} 

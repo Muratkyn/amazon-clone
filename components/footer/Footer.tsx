@@ -3,14 +3,14 @@ import "./Footer.css"
 
 const Footer = () => {
   return (
-    <div className="footer_div">
+    <div className="footer__div">
       <img className="w-24" 
        src='../images/amazon.png' 
        alt="logo" />
-      <p className="footer_text">
+      <p className="footer__text">
         All rights reserved{" "}
         <a
-          className="footer_link"
+          className="footer__link"
           href="/"
           target="_blank"
         > @amazon.it

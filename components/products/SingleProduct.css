@@ -1,36 +1,36 @@
 
-.container {
+.single__container {
     @apply flex justify-center items-center w-[1500px]
 }
 
-.products {
+.single__products {
     @apply h-[650px] w-[1200px] bg-white m-3 
 }
 
-.img_container {
+.single__img--container {
     @apply h-[400px] m-4 p-1
 }
 
-.img {
+.single__img {
     @apply h-[100%] w-[100%]  object-fill cursor-pointer
 }
 
-.product_name {
+.single__product--name {
     @apply text-xs xl:text-xl text-blue-500 ml-4 hover:text-orange-500 cursor-pointer
 }
 
-.product_price {
+.single__product--price {
     @apply m-4 font-bold
 }
 
-.product_options {
+.single__product--options {
     @apply text-xs text-blue-400 mr-4
 }
 
-.btn_container {
+.single__btn--container {
     @apply flex justify-center items-center mt-5
 }
 
-.btn_add {
+.single__btn--add {
     @apply bg-yellow-300 p-2 rounded-xl w-[70%] hover:bg-yellow-400
 }

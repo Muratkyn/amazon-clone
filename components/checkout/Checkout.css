@@ -1,63 +1,63 @@
-.btn_checkout {
+.btn__checkout {
     @apply text-xs border border-solid border-gray-100 rounded-lg 
     p-1.5 shadow-lg hover:bg-slate-100
 }
 
-.checkout_container {
+.checkout__container {
     @apply h-screen bg-amazonColors-backgroundColor overflow-scroll
 }
 
-.checkout_banner_section {
+.checkout__banner--section {
     @apply min-w-[700px] max-w-[1000px] h-[140px] 
     m-auto pt-8 flex items-center justify-center
 }
 
-.checkout_banner {
+.checkout__banner {
     @apply bg-white w-[90%] h-[100%] flex 
     flex-row justify-center items-center gap-20
 }
 
-.checkout_banner_link {
+.checkout__banner--link {
     @apply text-sm border border-solid border-gray-200 
     rounded-lg p-1.5 shadow-lg hover:bg-slate-100
 }
 
-.checkout_items_container {
+.checkout__items--container {
     @apply min-w-[50%] max-w-[70%] h-auto m-auto pt-8
 }
 
-.checkout_items_div {
+.checkout__items--div {
     @apply grid grid-cols-8 gap-10 mb-12
 }
 
-.checkout_items {
+.checkout__items {
     @apply col-span-6 bg-white
 }
 
-.checkout_items_cart {
+.checkout__items--cart {
     @apply text-2xl xl:text-3xl mt-4 pl-10
 }
 
-.checkout_items_price {
+.checkout__items--price {
     @apply flex flex-col items-end mr-8
 }
 
-.checkout_items_total {
+.checkout__items--total {
     @apply text-lg xl:text-xl text-right mb-2 mr-10 
 }
 
-.checkout_box {
+.checkout__box {
     @apply col-span-2 bg-white rounded h-[280px] w-[300px] p-10
 }
 
-.checkout_box_text {
+.checkout__box--text {
     @apply text-xs text-green-800 mb-2
 }
 
-.checkout_box_total {
+.checkout__box--total {
     @apply text-base xl:text-lg mb-4 
 }
 
-.checkout_box_btn {
+.checkout__box--btn {
     @apply bg-yellow-400 p-1.5 rounded-xl w-[100%] mt-2 text-sm hover:bg-yellow-500 hover:border
 }

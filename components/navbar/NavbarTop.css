@@ -1,72 +1,71 @@
-.navbarTop_main_container {
+.navbarTop__main--container {
     @apply flex bg-amazonColors-default text-white h-[60px]
 }
 
-.navbarTop_container {
+.navbarTop__container {
     @apply flex items-center p-2 m-4
 }
 
-.navbar_img {
+.navbarTop__img {
     @apply h-[35px] w-[110px] m-2
 }
 
-.navbar_text {
+.navbarTop__text {
     @apply text-xs xl:text-sm text-gray-300
 }
 
-.navbar_text_div {
+.navbarTop__text--div {
     @apply pr-4 pl-4
 }
 
-.navbar_pin_icon {
+.navbarTop__pin--icon {
     @apply text-sm xl:text-base font-bold flex items-center 
 }
 
-.navbar_search {
+.navbarTop__search {
     @apply flex grow items-center
 }
 
-.navbar_right {
+.navbarTop__right {
     @apply flex items-center m-4 
 }
 
-.navbar_right_div {
+.navbarTop__right--div {
     @apply pr-4 pl-1 ml-10
 }
 
-.navbar_text_bold {
+.navbarTop__text--bold {
     @apply text-sm xl:text-base font-bold
 }
-
 
 #link {
     @apply flex pr-3 pl-3
 }
 
-.navbar_shop_icon {
+.navbarTop__shop--icon {
     @apply h-[50px] relative
 }
 
-.navbar_cart_items {
+.navbarTop__cart--items {
     @apply absolute font-bold right-[16px] top-[8px] text-orange-500
 }
 
-.navbar_cart {
+.navbarTop__cart {
     @apply mt-5 text-xs xl:text-sm font-bold
 }
 
-.navbar_cart_container {
+.navbarTop__cart--container {
     @apply w-[600px] top-0 left-0  flex flex-col fixed z-50
 }
 
-.navbar_cart_div {
+.navbarTop__cart--div {
     @apply fixed z-50 mt-14 bg-opacity-60  bg-black w-full h-screen
 }
 
-.navbar_cart_wrapper {
+.navbarTop__cart--wrapper {
     @apply bg-white w-[520px]
 }
 
-.navbar_cart_hover {
+.navbarTop__cart--hover {
     @apply gap-2 w-[520px] justify-start items-center text-black bg-yellow-400 px-8 py-3 text-lg font-bold border-black border-solid
 }

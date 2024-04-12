@@ -13,20 +13,20 @@ const SingleProduct = () => {
 
   return (
     <div >
-      <div className='container'>
+      <div className='single__container'>
         {product.map((product) => (
-          <div key={product.id} className='products'>
-            <div className='img_container'>
-              <img className='img' src={product.img} alt="img" />
+          <div key={product.id} className='single__products'>
+            <div className='single__img--container'>
+              <img className='single__img' src={product.img} alt="img" />
               </div>
-            <div className='product_name'>
+            <div className='single__product--name'>
               {product.productName}
             </div>
             <Rate />
-          <span className='product_price'>{product.price}€</span>
-          <span className='product_options'>({product.options})</span>
-          <div className='btn_container'>
-            <button onClick={() => dispatch(addToCart((product)))} className='btn_add'>
+          <span className='single__product--price'>{product.price}€</span>
+          <span className='single__product--options'>({product.options})</span>
+          <div className='single__btn--container'>
+            <button onClick={() => dispatch(addToCart((product)))} className='single__btn--add'>
               Aggiungi al carrello
             </button>
           </div>

@@ -10,30 +10,30 @@ interface NavbarProp {
 const NavbarMenuOpen = ({toggleNavbar}: NavbarProp) => {
   return (
     <div onClick={() => toggleNavbar()}>
-      <div className='navbarMenuOpen_container'> 
+      <div className='navbarMenuOpen__container'> 
         <motion.div 
           initial={{x: -500, opacity: 0}} 
           animate={{x: 0 , opacity:1}} 
           transition={{duration: .4}} 
-          className='navbarMenuOpen_div inherit_bg'>
-          <div className='navbarMenuOpen_icon_div'>
-            <UserCircleIcon className='icon_size'/>
+          className='navbarMenuOpen__div inherit__bg'>
+          <div className='navbarMenuOpen__icon--div'>
+            <UserCircleIcon className='icon__size'/>
             Ciao, accedi        
-            <span className='navbarMenuOpen_icon_x'>    
+            <span className='navbarMenuOpen__icon--x'>    
               <XMarkIcon 
                onClick={() => toggleNavbar()} 
-               className='icon_size'/>
+               className='icon__size'/>
             </span>
           </div>
-          <div className='size_full overflow-scroll'>
-            <div className='navbarMenuOpen_groups'>
-              <h2 className='text_bold'>Di tendenza</h2>
+          <div className='size__full overflow-scroll'>
+            <div className='navbarMenuOpen__groups'>
+              <h2 className='text__bold'>Di tendenza</h2>
               <p>Bestseller</p>
               <p>Novita'</p>
               <p>I prodotti del momento</p>
             </div>
-            <div className='navbarMenuOpen_groups'>
-              <h2 className='text_bold'>Scegli per Categoria</h2>
+            <div className='navbarMenuOpen__groups'>
+              <h2 className='text__bold'>Scegli per Categoria</h2>
               <p>Amazon Primew Video</p>
               <p>Amazon Mucis</p>
               <p>Amazon Photos</p>
@@ -43,8 +43,8 @@ const NavbarMenuOpen = ({toggleNavbar}: NavbarProp) => {
               <p>App Store per Android</p>
               <p>Audolibri Audible</p>
             </div>
-            <div className='navbarMenuOpen_groups'>
-              <h2 className='text_bold'>Aiuta e impostazioni</h2>
+            <div className='navbarMenuOpen__groups'>
+              <h2 className='text__bold'>Aiuta e impostazioni</h2>
               <p>Il mio Account</p>
               <p>Servizio Clienti</p>
               <p>Accedi</p>

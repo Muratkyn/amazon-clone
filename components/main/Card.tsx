@@ -10,17 +10,17 @@ interface Props {
 
 const Cards = ({title, img, link}: Props) => {
   return (
-    <div className='card_div'>
+    <div className='card__div'>
       <Link href={"/product"}>
-        <div className='card_title'>
+        <div className='card__title'>
           {title}
         </div>
-        <div className='card_img_div'>
-          <img className='card_img' 
+        <div className='card__img--div'>
+          <img className='card__img' 
            src={img} 
            alt="img" />
         </div>
-        <div className='card_link'>
+        <div className='card__link'>
           {link}
         </div>
       </Link>
