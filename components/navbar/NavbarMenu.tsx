@@ -13,7 +13,7 @@ const NavbarMenu = () => {
     }
 
   return (
-    <div className='navbarMenu_container '>
+    <div className='navbarMenu__container '>
         <Bars3Icon onClick={() => toggleNavbar()} className='h-[28px]'/>
         {navbarOpen &&
           <NavbarMenuOpen toggleNavbar={toggleNavbar}/>
@@ -35,15 +35,15 @@ const NavbarMenu = () => {
         <p>Musica</p>
         <p>Animali</p>
         <p>Auto</p>
-        <div className='navbarMenu_promo'>
+        <div className='navbarMenu__promo'>
           <img 
-            className='navbarMenu_play_icon' 
+            className='navbarMenu__play--icon' 
             src="./images/play.svg" 
             alt="img" />
           <Link 
            href={"/product"}>
-           <p className='navbarMenu_prime'>AMAZON PRIME <span 
-            className='text-white text-sm'>| 
+           <p className='navbarMenu__prime'>AMAZON PRIME <span 
+            className='navbarMenu_text'>| 
             Iscriviti, gratis per 30 giorni</span>
            </p>
           </Link>

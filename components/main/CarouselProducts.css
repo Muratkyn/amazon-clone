@@ -1,7 +1,7 @@
-.carousel_prod_div {
+.carousel__prod--div {
     @apply bg-white m-3 p-5 w-auto
 }
 
-.carousel_prod_swiper {
+.carousel__prod--swiper {
     @apply text-2xl font-semibold p-3
 }

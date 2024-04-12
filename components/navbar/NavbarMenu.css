@@ -1,18 +1,22 @@
 
-.navbarMenu_container{
+.navbarMenu__container{
     @apply flex items-center justify-evenly bg-amazonColors-lightBlue
      text-white space-x-5 text-xs xl:text-sm pl-1 gap-1 cursor-pointer 
      md:text-xs lg:text-xs p-1
 }
 
-.navbarMenu_promo {
+.navbarMenu__promo {
     @apply flex items-center justify-end text-xs
 }
 
-.navbarMenu_play_icon{
+.navbarMenu__play--icon{
     @apply w-[30px] h-[30px] ml-4
 }
 
-.navbarMenu_prime {
+.navbarMenu__prime {
     @apply pl-2 text-cyan-500 font-bold
+}
+
+.navbarMenu_text {
+    @apply text-white text-sm
 }

@@ -1,12 +1,12 @@
 
-.carousel_div {
+.carousel__div {
     @apply h-[500px]
 }
 
-.carousel_swiper{
+.carousel__swiper{
     @apply h-[50%]
 }
 
-.carousel_shade {
+.carousel__shade {
     @apply h-[50%] flex justify-center m-auto bg-gradient-to-b from-orange-600 to-white
 }

@@ -8,7 +8,7 @@ import "./page.css"
 const page = () => {
     
   return (
-      <div className='product_page_container'>
+      <div className='product__page--container'>
         <Sidebar />
         <SingleProduct />
       </div>

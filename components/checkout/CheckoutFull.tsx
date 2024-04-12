@@ -13,44 +13,44 @@ const CheckoutItems = () => {
     items.map((item) => {
       return (
         <div key={item.id}>
-          <div className='checkout_full_container'>
-            <div className='checkout_full_div'>
-              <div className='checkout_full_img'> 
+          <div className='checkout__full--container'>
+            <div className='checkout__full--div'>
+              <div className='checkout__full--img'> 
                 <img className='p-16' 
                   src={item.img} 
                   alt="img" />
               </div>
-              <div className='checkout_full_product_div'> 
-                <div className='checkout_full_productName'>
+              <div className='checkout__full--product__div'> 
+                <div className='checkout__full--productName'>
                   {item.productName}
                 </div>
-                <div className='checkout_full_options'>
+                <div className='checkout__full--options'>
                   <p className='text-sm mr-3'>({item.options})</p>
                   <div className='flex mt-2'>
-                  <p className='checkout_full_option'>✅ Amazon's choice</p>
+                  <p className='checkout__full--option'>✅ Amazon's choice</p>
                   </div>
                 </div>
-                <div className='checkout_full_btn_div'>
-                  <div className='checkout_full_btn'
+                <div className='checkout__full--btn__div'>
+                  <div className='checkout__full--btn'
                     onClick={()=> dispatch(decrementCart(item.id))}>-</div>
-                  <div className='checkout_full_btn'>{item.quantity}</div>
-                  <div className='checkout_full_btn'
+                  <div className='checkout__full--btn'>{item.quantity}</div>
+                  <div className='checkout__full--btn'
                     onClick={()=> dispatch(incrementCart(item.id))}>+</div>                                                                                            
                 </div>
-                <div className='checkout_full_sub_btns'>
-                  <button className='btn_checkout' 
+                <div className='checkout__full--sub__btns'>
+                  <button className='btn__checkout' 
                     onClick={() => dispatch(removeFromCart(item.id))}>Rimuovi</button>  
-                  <button className='btn_checkout'>Salva per Dopo</button>                                      
-                  <button className='btn_checkout'>Condividi</button>                                      
+                  <button className='btn__checkout'>Salva per Dopo</button>                                      
+                  <button className='btn__checkout'>Condividi</button>                                      
                   <Link href={"/product"}>
-                    <button className='btn_checkout'>
+                    <button className='btn__checkout'>
                     Visualiiza gli altri articoli simili</button>                                      
                   </Link>
                 </div>
               </div>
             </div>
-            <div className='checkout_full_price_div'> 
-              <div className='checkout_full_price '>
+            <div className='checkout__full--price__div'> 
+              <div className='checkout__full--price '>
                 {item.price}€
               </div>
             </div>

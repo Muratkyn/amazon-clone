@@ -10,8 +10,8 @@ import "./CarouselProducts.css"
 
 const CarouselProducts = () => {
   return (
-    <div className='carousel_prod_div'>
-      <div className='carousel_prod_swiper'>Best sellers
+    <div className='carousel__prod--div'>
+      <div className='carousel__prod--swiper'>Best sellers
         <Swiper
           slidesPerView={6}
           spaceBetween={10}
